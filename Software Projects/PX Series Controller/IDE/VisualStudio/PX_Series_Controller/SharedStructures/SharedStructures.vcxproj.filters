@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\ControllerConfigurations">
+      <UniqueIdentifier>{d6756de9-75b8-40ec-93eb-8f9cdb82a9a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SharedInterfaces">
+      <UniqueIdentifier>{7dc369de-e3c3-4d7b-b8ea-8853b1d2fc5a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_String_Generator\Viewstate_String_Generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TimeSignature.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\EventLog_Item_Collection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\PersistentData\PersistentData_PX4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ScheduledTaskDetail.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TaskAlias.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Configurations\PX4_Config.h">
+      <Filter>Header Files\ControllerConfigurations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\INavigationTones.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IPostTones.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITextDisplay.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IPolledInterfaceControl.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IRtcLogger.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\PowerRelayGroupAlias.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IPowerRelayArray.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\Ipersistent.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IPersistentDataCoordinator.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\PersistentDataAlias.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelEnvAirData.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelEnvLightData.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelInterfaceData.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelSystemData.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelTaskData.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelViewstateData.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ComponentPowerState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TaskItemPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\VElementList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TaskItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskItem.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskItem_Context_ScheduledTaskDetail.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskItem_Context_ViewState.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_Stack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_CircularList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ISelectableNavigationMap.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\NavigationMapSelection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SelectableNavigationMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IViewstateMapGenerator.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ViewstateAlias.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ICommandInterpreter.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskHandler.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskHandlerFactory.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IAirSensor.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SelectableViewstateElementAlias.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_DynamicDataProxy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IDynamicData.h">
+      <Filter>SharedInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\Subject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ComponentAssociation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\PowerRelayStateData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_String_Generator\Viewstate_String_Generator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\TimeSignature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\EventLog_Item_Collection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\TaskItemPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\VElementList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\TaskItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\SelectableNavigationMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.vcxproj">
+      <Project>{92462d1f-282c-487b-b4bc-93684eb0ce1c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedStructures\SharedStructures.vcxproj">
+      <Project>{bf115653-d7af-4c65-873c-43517a33f2dd}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\CommandInterpreter\CommandInterpreter_PX4.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskExecutor\TaskExecutor.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandlerFactory\TaskHandlerFactory_PX4.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Component_TaskHandler\PX4_PowerRelay_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_Alarms.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_Display.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_FansCirculation.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_FansExhaust.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_Lights.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_EnvironmentSettings_LightCycleView_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_InputViewstate_BooleanValue_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_InputViewstate_ThreeSegmentValue_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_InputViewstate_TimeSpanValue_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ManualOverrideViewstate_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_PowerRelayEditViewstate_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_PowerRelaySettingsViewstate_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_CreateSelectView_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_CreateTaskConfView_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_CreateView_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_EditView_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_SetView_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ViewstateNavigate_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskScheduler\TaskScheduler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\CommandInterpreter\CommandInterpreter_PX4.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\TaskExecutor\TaskExecutor.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\TaskHandlerFactory\TaskHandlerFactory_PX4.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\TaskScheduler\TaskScheduler.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{3FA7E674-8507-475B-92A3-DA19D1D11D46}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Task</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

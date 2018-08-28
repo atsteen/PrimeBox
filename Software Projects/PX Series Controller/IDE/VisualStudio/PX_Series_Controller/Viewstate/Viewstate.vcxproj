@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{47AC6BC0-628B-45F7-A8C4-45EE1356FA8A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Viewstate</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Group\IViewstate_Group.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Group\Viewstate_Group_PX4.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\ITextViewstate.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettingsView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettingsView_TLMV.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettings_AlarmThresholdView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettings_FanCycleView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettings_LightCycleView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ManualOverrideView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ManualOverrideView_TLMV.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_PowerRelayEditView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_PowerRelaySettingsView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_PowerRelayView_TLMV.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfigView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfigView_TLMV.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_BulkDeleteTaskView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateDeleteView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskByAssociationView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskByRelayView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskSelectView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_DeleteTaskConfView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_DeleteTaskView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_EditTaskView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_SetTaskView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_SetBooleanView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_SetThreeSegmentView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_SetTimeView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_StatusView.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\IViewstate_Element.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_AirTemperature.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_BooleanValue.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentState.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentStateAuto.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentState_Override.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicState.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicText.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicThreeSegmentText.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicTimeState.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_EventCollection_3.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_NewlineTemplate_20x4.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayConfigurationList.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayConfigurationList_Row.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateList.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateList_Row.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelativeHumidity.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelayGroupShortName.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelayTypeShortName.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SchdTaskType.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Edit.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Edit_Row.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Set.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Set_Row.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowDownRow.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowLeft.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowRight.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SignedTwoSegmentValue.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticComponentState.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticSchdTaskType.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticText.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticTimeState.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SystemMode.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SystemTime.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ThreeSegmentValue.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_TimeState.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_UnsignedTwoSegmentValue.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Viewstate_Element_Text.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Manager\Viewstate_Manager.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Map_Generator\Viewstate_Map_Generator_PX4.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_String_Generator\Viewstate_String_Generator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Group\Viewstate_Group_PX4.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettingsView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettingsView_TLMV.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettings_AlarmThresholdView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettings_FanCycleView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettings_LightCycleView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ManualOverrideView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ManualOverrideView_TLMV.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_PowerRelayEditView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_PowerRelaySettingsView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_PowerRelayView_TLMV.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfigView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfigView_TLMV.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_BulkDeleteTaskView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateDeleteView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskByAssociationView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskByRelayView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskSelectView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_DeleteTaskConfView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_DeleteTaskView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_EditTaskView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_SetTaskView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_SetBooleanView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_SetThreeSegmentView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_SetTimeView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_StatusView.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_AirTemperature.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_BooleanValue.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentState.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentStateAuto.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentState_Override.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicState.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicText.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicThreeSegmentText.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicTimeState.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_EventCollection_3.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_NewlineTemplate_20x4.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayConfigurationList.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayConfigurationList_Row.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateEvent.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateList.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateList_Row.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelativeHumidity.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelayGroupShortName.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelayTypeShortName.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SchdTaskType.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Edit.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Edit_Row.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Set.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Set_Row.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowDownRow.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowLeft.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowRight.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SignedTwoSegmentValue.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticComponentState.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticSchdTaskType.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticText.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticTimeState.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SystemMode.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SystemTime.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ThreeSegmentValue.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_TimeState.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_UnsignedTwoSegmentValue.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Viewstate_Element_Text.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Manager\Viewstate_Manager.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Map_Generator\Viewstate_Map_Generator_PX4.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_String_Generator\Viewstate_String_Generator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedStructures\SharedStructures.vcxproj">
+      <Project>{bf115653-d7af-4c65-873c-43517a33f2dd}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

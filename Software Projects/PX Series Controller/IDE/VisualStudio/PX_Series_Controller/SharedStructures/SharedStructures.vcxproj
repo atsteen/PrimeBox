@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{BF115653-D7AF-4C65-873C-43517A33F2DD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SharedStructures</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CodeBase\Configurations\PX4_Config.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ComponentAssociation.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ComponentPowerState.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\EventLog_Item_Collection.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\NavigationMapSelection.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\PersistentDataAlias.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\PersistentData\PersistentData_PX4.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\PowerRelayGroupAlias.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\PowerRelayStateData.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ScheduledTaskDetail.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SelectableNavigationMap.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SelectableViewstateElementAlias.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IAirSensor.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ICommandInterpreter.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IDynamicData.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelEnvAirData.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelEnvLightData.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelInterfaceData.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelSystemData.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelTaskData.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IModelViewstateData.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\INavigationTones.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\Ipersistent.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IPersistentDataCoordinator.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IPolledInterfaceControl.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IPostTones.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IPowerRelayArray.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IRtcLogger.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ISelectableNavigationMap.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskHandlerFactory.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskItem.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskItem_Context_ScheduledTaskDetail.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITaskItem_Context_ViewState.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\ITextDisplay.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\SharedInterface\IViewstateMapGenerator.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\Subject.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TaskAlias.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TaskItem.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TaskItemPool.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TimeSignature.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_CircularList.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_DynamicDataProxy.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_List.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_queue.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_Stack.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\VElementList.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ViewstateAlias.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_String_Generator\Viewstate_String_Generator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\EventLog_Item_Collection.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\SelectableNavigationMap.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\TaskItem.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\TaskItemPool.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\TimeSignature.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\SharedStructure\VElementList.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_String_Generator\Viewstate_String_Generator.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

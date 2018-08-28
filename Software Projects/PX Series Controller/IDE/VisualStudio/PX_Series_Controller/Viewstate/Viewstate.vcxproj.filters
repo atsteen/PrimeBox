@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Viewstates">
+      <UniqueIdentifier>{972f68ca-922c-4ead-a7da-da5bb9708c2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ViewstateElements">
+      <UniqueIdentifier>{270f6186-f8fa-4469-b455-f6156741d46e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ViewstateManager">
+      <UniqueIdentifier>{629fef1a-9c0c-430a-88a8-efe73a7d5191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ViewstateStringGenerator">
+      <UniqueIdentifier>{2a73c8f0-be4a-4406-a255-deb267745a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ViewstateElements\TextElements">
+      <UniqueIdentifier>{2ec2c6f6-e606-473e-bf36-d421650044a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ViewstateStringGenerator">
+      <UniqueIdentifier>{090167d4-c7aa-4dfd-b885-f55e8b3f2f84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ViewstateManager">
+      <UniqueIdentifier>{d064e19e-435d-49b8-aa16-d9ec9e3b788d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ViewstateElements">
+      <UniqueIdentifier>{c1f1a06b-2419-4a70-ad33-764c5856e54c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Viewstates">
+      <UniqueIdentifier>{aeb7fbfd-9c5d-4fbc-8163-26c0456a5b81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ViewstateElements\TextElements">
+      <UniqueIdentifier>{84aef48e-aae2-4416-b88a-87d54536beda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Viewstates\Group">
+      <UniqueIdentifier>{7bccefe4-7160-4edc-9e67-921b58a3e507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Viewstates\Group">
+      <UniqueIdentifier>{8d91b8f7-6f93-4dd5-9fd4-9d23ec651e77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ViewstateMapGenerator">
+      <UniqueIdentifier>{de45fc3c-7daf-474a-9c4e-71ee1c945454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ViewstateMapGenerator">
+      <UniqueIdentifier>{f6239f88-d299-49b1-b954-0f5f58902164}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Manager\Viewstate_Manager.h">
+      <Filter>Header Files\ViewstateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\IViewstate_Element.h">
+      <Filter>Header Files\ViewstateElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Viewstate_Element_Text.h">
+      <Filter>Header Files\ViewstateElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_AirTemperature.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentState.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentState_Override.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentStateAuto.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicState.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicText.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicThreeSegmentText.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicTimeState.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_EventCollection_3.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_NewlineTemplate_20x4.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelativeHumidity.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SchdTaskType.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Edit.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Edit_Row.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Set.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Set_Row.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowDownRow.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowLeft.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowRight.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SignedTwoSegmentValue.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticComponentState.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticSchdTaskType.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticText.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticTimeState.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SystemMode.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SystemTime.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ThreeSegmentValue.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_TimeState.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettings_AlarmThresholdView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettings_FanCycleView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettings_LightCycleView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettingsView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_EnvironmentSettingsView_TLMV.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ManualOverrideView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ManualOverrideView_TLMV.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_BulkDeleteTaskView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateDeleteView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_DeleteTaskConfView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_DeleteTaskView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_EditTaskView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_SetTaskView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfigView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfigView_TLMV.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_SetThreeSegmentView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_SetTimeView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_StatusView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_String_Generator\Viewstate_String_Generator.h">
+      <Filter>Header Files\ViewstateStringGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\ITextViewstate.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Group\IViewstate_Group.h">
+      <Filter>Header Files\Viewstates\Group</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Group\Viewstate_Group_PX4.h">
+      <Filter>Header Files\Viewstates\Group</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Map_Generator\Viewstate_Map_Generator_PX4.h">
+      <Filter>Header Files\ViewstateMapGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateList.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateList_Row.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_UnsignedTwoSegmentValue.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelayGroupShortName.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_SetBooleanView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_BooleanValue.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_PowerRelayView_TLMV.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_PowerRelaySettingsView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayConfigurationList.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayConfigurationList_Row.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelayTypeShortName.h">
+      <Filter>Header Files\ViewstateElements\TextElements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_PowerRelayEditView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskSelectView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskByAssociationView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskByRelayView.h">
+      <Filter>Header Files\Viewstates</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_String_Generator\Viewstate_String_Generator.cpp">
+      <Filter>Source Files\ViewstateStringGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Manager\Viewstate_Manager.cpp">
+      <Filter>Source Files\ViewstateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Viewstate_Element_Text.cpp">
+      <Filter>Source Files\ViewstateElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_AirTemperature.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentState.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentState_Override.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ComponentStateAuto.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicState.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicText.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicThreeSegmentText.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_DynamicTimeState.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_EventCollection_3.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_NewlineTemplate_20x4.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelativeHumidity.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SchdTaskType.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Edit.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Edit_Row.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Set.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ScheduledTaskList_Set_Row.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowDownRow.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowLeft.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SelectArrowRight.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SignedTwoSegmentValue.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticComponentState.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticSchdTaskType.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticText.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_StaticTimeState.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SystemMode.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SystemTime.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ThreeSegmentValue.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_TimeState.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettings_AlarmThresholdView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettings_FanCycleView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettings_LightCycleView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettingsView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_EnvironmentSettingsView_TLMV.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ManualOverrideView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ManualOverrideView_TLMV.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_BulkDeleteTaskView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateDeleteView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_DeleteTaskConfView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_DeleteTaskView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_EditTaskView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_SetTaskView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfigView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfigView_TLMV.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_SetThreeSegmentView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_SetTimeView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_StatusView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Group\Viewstate_Group_PX4.cpp">
+      <Filter>Source Files\Viewstates\Group</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Map_Generator\Viewstate_Map_Generator_PX4.cpp">
+      <Filter>Source Files\ViewstateMapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateList.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateList_Row.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_UnsignedTwoSegmentValue.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelayGroupShortName.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_SetBooleanView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_BooleanValue.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_PowerRelayView_TLMV.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_PowerRelaySettingsView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayConfigurationList.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayConfigurationList_Row.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_RelayTypeShortName.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_PowerRelayEditView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskSelectView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskByAssociationView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate\Viewstate_PX4_ScheduledTasksConfig_CreateTaskByRelayView.cpp">
+      <Filter>Source Files\Viewstates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_Element\Text_Elements\Viewstate_Element_Text_PowerRelayStateEvent.cpp">
+      <Filter>Source Files\ViewstateElements\TextElements</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

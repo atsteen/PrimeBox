@@ -1,2 +1,2 @@
 # PrimeBox
-Repository for PrimeBox Certified device firmware
+Repository for PrimeBox Certified Horticulture Solutions

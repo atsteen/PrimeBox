@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Abstraction">
+      <UniqueIdentifier>{7c75ae3b-c875-43f3-ad92-79cfefab03ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Abstraction\Refinements">
+      <UniqueIdentifier>{104026f3-413f-487c-8bfd-2152d861c34b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Implementation">
+      <UniqueIdentifier>{04ab72f1-6255-4164-9ec1-6b5070b33b12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Implementation\Concrete">
+      <UniqueIdentifier>{5d47cec1-f7bc-4c97-b481-0599dafca3a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Implementation\Concrete\Win32">
+      <UniqueIdentifier>{10a603fe-4133-4ae7-ac49-34c7189104bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Implementation">
+      <UniqueIdentifier>{136ab4bc-7396-4e50-abc7-63be2bb25854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Abstraction">
+      <UniqueIdentifier>{6a1a009e-6233-41cf-9112-c4b08e80b651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Implementation\Concrete">
+      <UniqueIdentifier>{3823b282-02d0-495f-a527-7ac8159133e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Abstraction\Refinements">
+      <UniqueIdentifier>{b16b08eb-75fb-4223-a623-9ef28b1b61cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Factory">
+      <UniqueIdentifier>{54e79975-7089-4b7d-b46b-f9951e409eb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factory">
+      <UniqueIdentifier>{4e588acf-a801-45f2-ab25-06cd409c150a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ComponentPackages">
+      <UniqueIdentifier>{d44466e0-5772-44cc-a359-dd5c123a23db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ComponentPackages">
+      <UniqueIdentifier>{28a15832-9eba-4b18-a27a-52a2e1dad924}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ImplementationFactory\include\ComponentModuleImp_Factory_PX4_Win32.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ImplementationFactory\include\ComponentModuleImp_Factory_PX4.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_ASCIIDisplay_Standard.h">
+      <Filter>Header Files\Abstraction\Refinements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_CombinedTempHumSensor_Standard.h">
+      <Filter>Header Files\Abstraction\Refinements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_Buzzer_Standard.h">
+      <Filter>Header Files\Abstraction\Refinements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_DataLogger_Standard.h">
+      <Filter>Header Files\Abstraction\Refinements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_PowerRelay_Standard.h">
+      <Filter>Header Files\Abstraction\Refinements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_RotaryEncoder_Standard.h">
+      <Filter>Header Files\Abstraction\Refinements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_RTC_Standard.h">
+      <Filter>Header Files\Abstraction\Refinements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_ASCIIDisplay.h">
+      <Filter>Header Files\Abstraction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_Buzzer.h">
+      <Filter>Header Files\Abstraction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_CombinedTempHumSensor.h">
+      <Filter>Header Files\Abstraction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_DataLogger.h">
+      <Filter>Header Files\Abstraction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_ASCIIDisplay_Win32.h">
+      <Filter>Header Files\Implementation\Concrete\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_Buzzer_Win32.h">
+      <Filter>Header Files\Implementation\Concrete\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_CombinedTempHumSensor_Win32.h">
+      <Filter>Header Files\Implementation\Concrete\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_DataLogger_Win32.h">
+      <Filter>Header Files\Implementation\Concrete\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_NvMemoryManager_Win32.h">
+      <Filter>Header Files\Implementation\Concrete\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_PowerRelay_Win32.h">
+      <Filter>Header Files\Implementation\Concrete\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_RotaryEncoder_Win32.h">
+      <Filter>Header Files\Implementation\Concrete\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_RTC_Win32.h">
+      <Filter>Header Files\Implementation\Concrete\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp.h">
+      <Filter>Header Files\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_ASCIIDisplay.h">
+      <Filter>Header Files\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_Buzzer.h">
+      <Filter>Header Files\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_CombinedTempHumSensor.h">
+      <Filter>Header Files\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_DataLogger.h">
+      <Filter>Header Files\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_NvMemoryManager.h">
+      <Filter>Header Files\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_PowerRelay.h">
+      <Filter>Header Files\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_RotaryEncoder.h">
+      <Filter>Header Files\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_RTC.h">
+      <Filter>Header Files\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_NvMemoryManager.h">
+      <Filter>Header Files\Abstraction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_NvMemoryManager_Standard.h">
+      <Filter>Header Files\Abstraction\Refinements</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_PowerRelay.h">
+      <Filter>Header Files\Abstraction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_RotaryEncoder.h">
+      <Filter>Header Files\Abstraction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_RTC.h">
+      <Filter>Header Files\Abstraction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\IComponentModule_PowerState.h">
+      <Filter>Header Files\Abstraction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ComponentPackages\include\ComponentPackage_PowerRelayArray.h">
+      <Filter>Header Files\ComponentPackages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ComponentPackages\include\ComponentPackage_UI_PX4.h">
+      <Filter>Header Files\ComponentPackages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ComponentPackages\include\ComponentPackage_RtcLogger.h">
+      <Filter>Header Files\ComponentPackages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ComponentPackages\include\ComponentPackage_CombinedAirSensor.h">
+      <Filter>Header Files\ComponentPackages</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_DataLogger_Standard.cpp">
+      <Filter>Source Files\Abstraction\Refinements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_ASCIIDisplay_Standard.cpp">
+      <Filter>Source Files\Abstraction\Refinements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_Buzzer_Standard.cpp">
+      <Filter>Source Files\Abstraction\Refinements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_CombinedTempHumSensor_Standard.cpp">
+      <Filter>Source Files\Abstraction\Refinements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_ASCIIDisplay_Win32.cpp">
+      <Filter>Source Files\Implementation\Concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_Buzzer_Win32.cpp">
+      <Filter>Source Files\Implementation\Concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_CombinedTempHumSensor_Win32.cpp">
+      <Filter>Source Files\Implementation\Concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_DataLogger_Win32.cpp">
+      <Filter>Source Files\Implementation\Concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_NvMemoryManager_Win32.cpp">
+      <Filter>Source Files\Implementation\Concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_PowerRelay_Win32.cpp">
+      <Filter>Source Files\Implementation\Concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_RotaryEncoder_Win32.cpp">
+      <Filter>Source Files\Implementation\Concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_RTC_Win32.cpp">
+      <Filter>Source Files\Implementation\Concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_NvMemoryManager_Standard.cpp">
+      <Filter>Source Files\Abstraction\Refinements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_RTC_Standard.cpp">
+      <Filter>Source Files\Abstraction\Refinements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_PowerRelay_Standard.cpp">
+      <Filter>Source Files\Abstraction\Refinements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_RotaryEncoder_Standard.cpp">
+      <Filter>Source Files\Abstraction\Refinements</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ImplementationFactory\src\ComponentModule_Imp_Factory_PX4_Win32.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ComponentPackages\src\ComponentPackage_PowerRelayArray.cpp">
+      <Filter>Source Files\ComponentPackages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ComponentPackages\src\ComponentPackage_UI_PX4.cpp">
+      <Filter>Source Files\ComponentPackages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ComponentPackages\src\ComponentPackage_RtcLogger.cpp">
+      <Filter>Source Files\ComponentPackages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ComponentPackages\src\ComponentPackage_CombinedAirSensor.cpp">
+      <Filter>Source Files\ComponentPackages</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

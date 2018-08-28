@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\TaskHandler">
+      <UniqueIdentifier>{11ef169a-584f-4924-a64e-61109ae39aa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TaskFactory">
+      <UniqueIdentifier>{74dd3d01-eb2a-4cfd-b251-69044a21b4a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TaskFactory">
+      <UniqueIdentifier>{eb3fe78f-97ea-4e59-ab90-94f06bda7720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TaskHandler\ViewstateHandlers">
+      <UniqueIdentifier>{c016dd54-dc81-44b2-a9b8-cbac45692d81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TaskHandler\StatusRefreshHandlers">
+      <UniqueIdentifier>{25840afc-e602-4642-83ad-c3f49e0b0049}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TaskHandler\ComponentHandlers">
+      <UniqueIdentifier>{aef78f7d-95d7-4f37-83d3-47a646fc26d5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskScheduler\TaskScheduler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\CommandInterpreter\CommandInterpreter_PX4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\TaskHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskExecutor\TaskExecutor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandlerFactory\TaskHandlerFactory_PX4.h">
+      <Filter>Header Files\TaskFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ViewstateNavigate_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_Alarms.h">
+      <Filter>Header Files\TaskHandler\StatusRefreshHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_Display.h">
+      <Filter>Header Files\TaskHandler\StatusRefreshHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_FansCirculation.h">
+      <Filter>Header Files\TaskHandler\StatusRefreshHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_FansExhaust.h">
+      <Filter>Header Files\TaskHandler\StatusRefreshHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\StateRefresh_TaskHandler\PX4_StateRefresh_Lights.h">
+      <Filter>Header Files\TaskHandler\StatusRefreshHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ManualOverrideViewstate_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_InputViewstate_ThreeSegmentValue_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_InputViewstate_BooleanValue_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_EnvironmentSettings_LightCycleView_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_InputViewstate_TimeSpanValue_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_PowerRelaySettingsViewstate_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_PowerRelayEditViewstate_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_CreateSelectView_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_CreateTaskConfView_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_CreateView_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_SetView_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_EditView_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Component_TaskHandler\PX4_PowerRelay_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ComponentHandlers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\TaskScheduler\TaskScheduler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\CommandInterpreter\CommandInterpreter_PX4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\TaskExecutor\TaskExecutor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CodeBase\Platform\src\TaskHandlerFactory\TaskHandlerFactory_PX4.cpp">
+      <Filter>Source Files\TaskFactory</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

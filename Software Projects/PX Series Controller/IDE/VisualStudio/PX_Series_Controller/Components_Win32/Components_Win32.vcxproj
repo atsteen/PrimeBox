@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{A81BFC7A-E32F-4E4C-8EAA-2463B512B58D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ComponentsWin32</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_ASCIIDisplay.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_Buzzer.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_CombinedTempHumSensor.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_DataLogger.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_NvMemoryManager.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_PowerRelay.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_RotaryEncoder.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\ComponentModule_RTC.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\IComponentModule_PowerState.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_ASCIIDisplay_Standard.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_Buzzer_Standard.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_CombinedTempHumSensor_Standard.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_DataLogger_Standard.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_NvMemoryManager_Standard.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_PowerRelay_Standard.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_RotaryEncoder_Standard.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\include\ComponentModule_RTC_Standard.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ComponentPackages\include\ComponentPackage_CombinedAirSensor.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ComponentPackages\include\ComponentPackage_PowerRelayArray.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ComponentPackages\include\ComponentPackage_RtcLogger.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ComponentPackages\include\ComponentPackage_UI_PX4.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ImplementationFactory\include\ComponentModuleImp_Factory_PX4.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\ImplementationFactory\include\ComponentModuleImp_Factory_PX4_Win32.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_ASCIIDisplay.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_Buzzer.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_CombinedTempHumSensor.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_DataLogger.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_NvMemoryManager.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_PowerRelay.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_RotaryEncoder.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\ComponentModule_Imp_RTC.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_ASCIIDisplay_Win32.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_Buzzer_Win32.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_CombinedTempHumSensor_Win32.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_DataLogger_Win32.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_NvMemoryManager_Win32.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_PowerRelay_Win32.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_RotaryEncoder_Win32.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\include\ComponentModule_Imp_RTC_Win32.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_ASCIIDisplay_Standard.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_Buzzer_Standard.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_CombinedTempHumSensor_Standard.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_DataLogger_Standard.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_NvMemoryManager_Standard.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_PowerRelay_Standard.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_RotaryEncoder_Standard.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Abstraction\Refined\src\ComponentModule_RTC_Standard.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ComponentPackages\src\ComponentPackage_CombinedAirSensor.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ComponentPackages\src\ComponentPackage_PowerRelayArray.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ComponentPackages\src\ComponentPackage_RtcLogger.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ComponentPackages\src\ComponentPackage_UI_PX4.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\ImplementationFactory\src\ComponentModule_Imp_Factory_PX4_Win32.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_ASCIIDisplay_Win32.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_Buzzer_Win32.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_CombinedTempHumSensor_Win32.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_DataLogger_Win32.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_NvMemoryManager_Win32.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_PowerRelay_Win32.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_RotaryEncoder_Win32.cpp" />
+    <ClCompile Include="..\..\..\..\CodeBase\Components\Implementation\Concrete\Win32\src\ComponentModule_Imp_RTC_Win32.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedStructures\SharedStructures.vcxproj">
+      <Project>{bf115653-d7af-4c65-873c-43517a33f2dd}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
