@@ -114,6 +114,7 @@ ITextViewstate * Viewstate_Group_PX4::GetViewstateByAlias(const ViewstateAlias v
 
 		case ViewstateAlias::VIEWSTATEALIAS_SCHEDULED_TASK_DELETE_TASK_CONF_VIEW:
 			_requestedViewstate = new Viewstate_PX4_ScheduledTasksConfig_DeleteTaskConfView(_viewStateData);
+			break;
 
 		case ViewstateAlias::VIEWSTATEALIAS_SCHEDULED_TASK_BULK_DELETE_TASK_CONF_VIEW:
 			_requestedViewstate = new Viewstate_PX4_ScheduledTasksConfig_BulkDeleteTaskView(_viewStateData);

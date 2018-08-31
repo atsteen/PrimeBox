@@ -111,6 +111,12 @@
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Component_TaskHandler\PX4_PowerRelay_TaskHandler.h">
       <Filter>Header Files\TaskHandler\ComponentHandlers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_DeleteView_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler.h">
+      <Filter>Header Files\TaskHandler\ViewstateHandlers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\CodeBase\Platform\src\TaskScheduler\TaskScheduler.cpp">

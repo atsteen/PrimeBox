@@ -49,6 +49,8 @@
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_CreateSelectView_TaskHandler.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_CreateTaskConfView_TaskHandler.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_CreateView_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_DeleteView_TaskHandler.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_EditView_TaskHandler.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_SetView_TaskHandler.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\TaskHandler\Viewstate_TaskHandlers\PX4_ViewstateNavigate_TaskHandler.h" />
