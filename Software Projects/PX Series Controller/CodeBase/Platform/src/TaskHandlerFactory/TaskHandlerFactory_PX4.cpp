@@ -34,6 +34,7 @@
 #include "..\..\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_EditView_TaskHandler.h"
 #include "..\..\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_DeleteView_TaskHandler.h"
 #include "..\..\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler.h"
+#include "..\..\include\TaskHandler\Viewstate_TaskHandlers\PX4_ScheduledTasksConfig_DeleteBulkTaskConfView_TaskHandler.h"
 #include "..\..\include\TaskHandler\Viewstate_TaskHandlers\PX4_PowerRelaySettingsViewstate_TaskHandler.h"
 #include "..\..\include\TaskHandler\Viewstate_TaskHandlers\PX4_PowerRelayEditViewstate_TaskHandler.h"
 #include "..\..\include\TaskHandler\Viewstate_TaskHandlers\PX4_InputViewstate_ThreeSegmentValue_TaskHandler.h"
@@ -77,6 +78,7 @@ T_List<ITaskHandler&>* TaskHandlerFactory_PX4::MakeHandlerList()
 	_taskHandlers.addBack(*new PX4_ScheduledTasksConfig_EditView_TaskHandler(_viewstateData, _taskData, _mapGenerator));
 	_taskHandlers.addBack(*new PX4_ScheduledTasksConfig_DeleteView_TaskHandler(_viewstateData, _taskData, _mapGenerator));
 	_taskHandlers.addBack(*new PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler(_viewstateData, _taskData, _mapGenerator));
+	_taskHandlers.addBack(*new PX4_ScheduledTasksConfig_DeleteBulkTaskConfView_TaskHandler(_viewstateData, _taskData, _mapGenerator));
 
 	//component handlers
 	_taskHandlers.addBack(*new PX4_PowerRelay_TaskHandler(_powerRelays));
