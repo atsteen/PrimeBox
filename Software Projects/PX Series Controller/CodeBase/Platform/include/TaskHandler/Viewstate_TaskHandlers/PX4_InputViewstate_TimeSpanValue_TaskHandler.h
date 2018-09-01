@@ -25,8 +25,8 @@
 class PX4_InputViewstate_TimeSpanValue_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_InputViewstate_TimeSpanValue_TaskHandler(IModelViewstateData * viewstateData, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _mapGenerator(mapGenerator){};
+	PX4_InputViewstate_TimeSpanValue_TaskHandler(IModelViewstateData * viewstateData, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _navTonePlayer(navTonePlayer){};
 	~PX4_InputViewstate_TimeSpanValue_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -41,6 +41,7 @@ protected:
 private:
 	IModelViewstateData * _viewstateData;
 	IViewstateMapGenerator * _mapGenerator;
+	INavigationTones * _navTonePlayer;
 
 	void _returnToPreviousViewstate();
 };
@@ -54,16 +55,22 @@ inline bool PX4_InputViewstate_TimeSpanValue_TaskHandler::HandleTask(TaskItem * 
 
 	switch (_taskItem->GetTaskAssociation()) {
 		case TaskAlias::TASKALIAS_NAVIGATION_MENU_SELECT :
-			if (currentlySelectedElement == SelectableViewstateElementAlias::SELECTABLE_BACK_ELEMENT) { this->_returnToPreviousViewstate(); }
+			if (currentlySelectedElement == SelectableViewstateElementAlias::SELECTABLE_BACK_ELEMENT)
+			{
+				this->_returnToPreviousViewstate();
+				_navTonePlayer->playBackSelectTone();
+			}
 			if (currentlySelectedElement == SelectableViewstateElementAlias::SELECTABLE_SAVE_ELEMENT)
 			{			
 				_viewstateData->GetDynamicDataProxy()->commit();
 				this->_returnToPreviousViewstate();
+				_navTonePlayer->playSelectTone();
 			}
 			if(currentlySelectedElement == SelectableViewstateElementAlias::SELECTABLE_SETTIME_HH_ELEMENT || currentlySelectedElement == SelectableViewstateElementAlias::SELECTABLE_SETTIME_MM_ELEMENT)
 			{
 				_viewstateData->SetDynamicViewstateModalState(!_viewstateData->GetDynamicViewstateModalState());
 				_viewstateData->ForceModelUpdateNotify();
+				_navTonePlayer->playSelectTone();
 			}
 
 			break;
@@ -84,6 +91,7 @@ inline bool PX4_InputViewstate_TimeSpanValue_TaskHandler::HandleTask(TaskItem * 
 				}
 			}
 
+			_navTonePlayer->playNavTone();
 			break;
 
 		case TaskAlias::TASKALIAS_NAVIGATION_MENU_MOVE_RIGHT:
@@ -102,6 +110,7 @@ inline bool PX4_InputViewstate_TimeSpanValue_TaskHandler::HandleTask(TaskItem * 
 				}
 			}
 
+			_navTonePlayer->playNavTone();
 			break;
 	};
 

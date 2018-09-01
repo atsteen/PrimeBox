@@ -25,8 +25,8 @@
 class PX4_ScheduledTasksConfig_DeleteBulkTaskConfView_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_ScheduledTasksConfig_DeleteBulkTaskConfView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _taskData(taskData){};
+	PX4_ScheduledTasksConfig_DeleteBulkTaskConfView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _taskData(taskData), _navTonePlayer(navTonePlayer){};
 	~PX4_ScheduledTasksConfig_DeleteBulkTaskConfView_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -42,6 +42,7 @@ private:
 	IModelViewstateData * _viewstateData;
 	IViewstateMapGenerator * _mapGenerator;
 	IModelTaskData * _taskData;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_ScheduledTasksConfig_DeleteBulkTaskConfView_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -58,6 +59,8 @@ inline bool PX4_ScheduledTasksConfig_DeleteBulkTaskConfView_TaskHandler::HandleT
 		{
 			_taskData->FreeScheduledTaskDetailByIndex(i--);
 		}
+
+		_navTonePlayer->playSelectTone();
 	}
 	
 	map = _mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_SCHEDULED_TASK_CREATE_DELETE_VIEW);

@@ -27,8 +27,8 @@
 class PX4_ScheduledTasksConfig_SetView_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_ScheduledTasksConfig_SetView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, IPowerRelayArray * relayArray)
-		: _viewstateData(viewstateData), _taskData(taskData), _mapGenerator(mapGenerator), _relayArray(relayArray){};
+	PX4_ScheduledTasksConfig_SetView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, IPowerRelayArray * relayArray, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _taskData(taskData), _mapGenerator(mapGenerator), _relayArray(relayArray), _navTonePlayer(navTonePlayer){};
 	~PX4_ScheduledTasksConfig_SetView_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -45,6 +45,7 @@ private:
 	IModelTaskData * _taskData;
 	IViewstateMapGenerator * _mapGenerator;
 	IPowerRelayArray * _relayArray;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_ScheduledTasksConfig_SetView_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -67,6 +68,7 @@ inline bool PX4_ScheduledTasksConfig_SetView_TaskHandler::HandleTask(TaskItem * 
 		}
 		else if (currentSelectedIndex < scheduledTasksCount - 1) { ++nextSelectedListIndex; }
 		_viewstateData->ForceModelUpdateNotify();
+		_navTonePlayer->playNavTone();
 		break;
 
 	case TaskAlias::TASKALIAS_NAVIGATION_MENU_MOVE_LEFT:
@@ -79,6 +81,7 @@ inline bool PX4_ScheduledTasksConfig_SetView_TaskHandler::HandleTask(TaskItem * 
 			--nextSelectedListIndex;
 		}
 		_viewstateData->ForceModelUpdateNotify();
+		_navTonePlayer->playNavTone();
 		break;
 
 	case TaskAlias::TASKALIAS_NAVIGATION_MENU_SELECT:
@@ -86,7 +89,7 @@ inline bool PX4_ScheduledTasksConfig_SetView_TaskHandler::HandleTask(TaskItem * 
 		bool taskEnabledStatus = *selectedTaskDetail->GetScheduledTaskEnabledState();
 		taskEnabledStatus = !taskEnabledStatus;
 		selectedTaskDetail->SetScheduledTaskEnabledState(&taskEnabledStatus);
-
+		_navTonePlayer->playSelectTone();
 		break;
 	}
 

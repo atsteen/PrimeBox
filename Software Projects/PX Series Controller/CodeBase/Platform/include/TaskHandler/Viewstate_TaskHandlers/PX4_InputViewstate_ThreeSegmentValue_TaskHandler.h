@@ -26,8 +26,8 @@
 class PX4_InputViewstate_ThreeSegmentValue_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_InputViewstate_ThreeSegmentValue_TaskHandler(IModelViewstateData * viewstateData, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _mapGenerator(mapGenerator){};
+	PX4_InputViewstate_ThreeSegmentValue_TaskHandler(IModelViewstateData * viewstateData, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _navTonePlayer(navTonePlayer){};
 	~PX4_InputViewstate_ThreeSegmentValue_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -42,6 +42,7 @@ protected:
 private:
 	IModelViewstateData * _viewstateData;
 	IViewstateMapGenerator * _mapGenerator;
+	INavigationTones * _navTonePlayer;
 
 	void _returnToPreviousViewstate();
 };
@@ -66,6 +67,7 @@ inline bool PX4_InputViewstate_ThreeSegmentValue_TaskHandler::HandleTask(TaskIte
 				_viewstateData->SetDynamicViewstateModalState(!_viewstateData->GetDynamicViewstateModalState());
 				_viewstateData->ForceModelUpdateNotify();
 			}
+			_navTonePlayer->playSelectTone();
 			break;
 
 		case TaskAlias::TASKALIAS_NAVIGATION_MENU_MOVE_LEFT :
@@ -74,6 +76,7 @@ inline bool PX4_InputViewstate_ThreeSegmentValue_TaskHandler::HandleTask(TaskIte
 				--(*_viewstateData->GetDynamicDataProxy()->getDynamicNumericValue());
 				_viewstateData->ForceModelUpdateNotify();
 			}
+			_navTonePlayer->playNavTone();
 			break;
 
 		case TaskAlias::TASKALIAS_NAVIGATION_MENU_MOVE_RIGHT:
@@ -82,6 +85,7 @@ inline bool PX4_InputViewstate_ThreeSegmentValue_TaskHandler::HandleTask(TaskIte
 				++(*_viewstateData->GetDynamicDataProxy()->getDynamicNumericValue());
 				_viewstateData->ForceModelUpdateNotify();
 			}
+			_navTonePlayer->playNavTone();
 			break;
 	};
 

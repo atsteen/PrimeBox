@@ -25,8 +25,8 @@
 class PX4_ScheduledTasksConfig_DeleteView_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_ScheduledTasksConfig_DeleteView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _taskData(taskData), _mapGenerator(mapGenerator){};
+	PX4_ScheduledTasksConfig_DeleteView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _taskData(taskData), _mapGenerator(mapGenerator), _navTonePlayer(navTonePlayer){};
 	~PX4_ScheduledTasksConfig_DeleteView_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -42,6 +42,7 @@ private:
 	IModelViewstateData * _viewstateData;
 	IModelTaskData * _taskData;
 	IViewstateMapGenerator * _mapGenerator;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_ScheduledTasksConfig_DeleteView_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -60,6 +61,7 @@ inline bool PX4_ScheduledTasksConfig_DeleteView_TaskHandler::HandleTask(TaskItem
 			selectedElementIndex = 0;
 		}
 		else if (selectedElementIndex < SCHEDULED_TASK_DETAIL_COUNT - _taskData->GetFreeScheduledTaskDetailCount() - 1) { ++selectedElementIndex; }
+		_navTonePlayer->playNavTone();
 
 		break;
 
@@ -72,6 +74,7 @@ inline bool PX4_ScheduledTasksConfig_DeleteView_TaskHandler::HandleTask(TaskItem
 		{
 			--selectedElementIndex;
 		}
+		_navTonePlayer->playNavTone();
 
 		break;
 
@@ -80,7 +83,9 @@ inline bool PX4_ScheduledTasksConfig_DeleteView_TaskHandler::HandleTask(TaskItem
 		{
 			selectedViewstate = ViewstateAlias::VIEWSTATEALIAS_SCHEDULED_TASK_DELETE_TASK_CONF_VIEW;
 			selectedElement = SelectableViewstateElementAlias::SELECTABLE_BACK_ELEMENT;
+			_navTonePlayer->playSelectTone();
 		}
+		
 		break;
 	}
 

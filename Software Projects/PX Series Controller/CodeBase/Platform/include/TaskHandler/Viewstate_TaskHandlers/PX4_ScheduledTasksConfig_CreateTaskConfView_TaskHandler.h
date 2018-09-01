@@ -26,8 +26,8 @@
 class PX4_ScheduledTasksConfig_CreateTaskConfView_TaskHandler: public ITaskHandler
 {
 public:
-	PX4_ScheduledTasksConfig_CreateTaskConfView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, IPowerRelayArray * relayArray)
-		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _taskData(taskData), _relayArray(relayArray){};
+	PX4_ScheduledTasksConfig_CreateTaskConfView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, IPowerRelayArray * relayArray, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _taskData(taskData), _relayArray(relayArray), _navTonePlayer(navTonePlayer){};
 	~PX4_ScheduledTasksConfig_CreateTaskConfView_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -44,6 +44,7 @@ private:
 	IViewstateMapGenerator * _mapGenerator;
 	IModelTaskData * _taskData;
 	IPowerRelayArray * _relayArray;
+	INavigationTones * _navTonePlayer;;
 };
 
 inline bool PX4_ScheduledTasksConfig_CreateTaskConfView_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -105,7 +106,7 @@ inline bool PX4_ScheduledTasksConfig_CreateTaskConfView_TaskHandler::HandleTask(
 		_taskData->SetCreateSchdTaskTarget(&taskAssociation);
 		break;
 	}
-
+	_navTonePlayer->playSelectTone();
 	return true;
 }
 

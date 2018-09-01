@@ -27,8 +27,8 @@
 class PX4_ScheduledTasksConfig_CreateView_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_ScheduledTasksConfig_CreateView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, IPowerRelayArray * relayArray)
-		: _viewstateData(viewstateData), _taskData(taskData), _mapGenerator(mapGenerator), _relayArray(relayArray){};
+	PX4_ScheduledTasksConfig_CreateView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, IPowerRelayArray * relayArray, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _taskData(taskData), _mapGenerator(mapGenerator), _relayArray(relayArray), _navTonePlayer(navTonePlayer){};
 	~PX4_ScheduledTasksConfig_CreateView_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -45,6 +45,7 @@ private:
 	IModelTaskData * _taskData;
 	IViewstateMapGenerator * _mapGenerator;
 	IPowerRelayArray * _relayArray;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_ScheduledTasksConfig_CreateView_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -70,6 +71,7 @@ inline bool PX4_ScheduledTasksConfig_CreateView_TaskHandler::HandleTask(TaskItem
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_BOOLEAN_ENABLE_DISABLE));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 	case SELECTABLE_SCHEDULED_TASK_TASK_TIME_ELEMENT:
@@ -85,6 +87,7 @@ inline bool PX4_ScheduledTasksConfig_CreateView_TaskHandler::HandleTask(TaskItem
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_TIME));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 	case SELECTABLE_SAVE_ELEMENT:
@@ -101,8 +104,9 @@ inline bool PX4_ScheduledTasksConfig_CreateView_TaskHandler::HandleTask(TaskItem
 		map->SetSelection(SelectableViewstateElementAlias::SELECTABLE_ELEMENT_DYNAMIC);
 		if (newTaskDetailIndex >= 0) { _viewstateData->SetViewstateSelectableElementIndex(newTaskDetailIndex); }
 		_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_SCHEDULED_TASK_SET_EXISTING_VIEW));
+		_navTonePlayer->playSelectTone();
 		_taskData->ClearCreateSchdTaskValues();
-
+		
 		return true;
 	}
 	

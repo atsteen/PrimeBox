@@ -27,8 +27,8 @@
 class PX4_ScheduledTasksConfig_EditView_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_ScheduledTasksConfig_EditView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _taskData(taskData), _mapGenerator(mapGenerator){};
+	PX4_ScheduledTasksConfig_EditView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _taskData(taskData), _mapGenerator(mapGenerator), _navTonePlayer(navTonePlayer) {};
 	~PX4_ScheduledTasksConfig_EditView_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -44,6 +44,7 @@ private:
 	IModelViewstateData * _viewstateData;
 	IModelTaskData * _taskData;
 	IViewstateMapGenerator * _mapGenerator;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_ScheduledTasksConfig_EditView_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -65,6 +66,7 @@ inline bool PX4_ScheduledTasksConfig_EditView_TaskHandler::HandleTask(TaskItem *
 			nextSelectedListIndex = 0;
 		}
 		else if (currentSelectedIndex < scheduledTasksCount - 1) { ++nextSelectedListIndex; }
+		_navTonePlayer->playNavTone();
 		break;
 
 	case TaskAlias::TASKALIAS_NAVIGATION_MENU_MOVE_LEFT:
@@ -76,6 +78,7 @@ inline bool PX4_ScheduledTasksConfig_EditView_TaskHandler::HandleTask(TaskItem *
 		{
 			--nextSelectedListIndex;
 		}
+		_navTonePlayer->playNavTone();
 		break;
 
 	case TaskAlias::TASKALIAS_NAVIGATION_MENU_SELECT:
@@ -97,6 +100,7 @@ inline bool PX4_ScheduledTasksConfig_EditView_TaskHandler::HandleTask(TaskItem *
 
 		_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 		_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_TIME));
+		_navTonePlayer->playSelectTone();
 		return true;
 	}
 

@@ -24,8 +24,8 @@
 class PX4_ManualOverrideViewstate_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_ManualOverrideViewstate_TaskHandler(IModelViewstateData * viewstateData, IPowerRelayArray * relayArray)
-		: _viewstateData(viewstateData), _relayArray(relayArray){};
+	PX4_ManualOverrideViewstate_TaskHandler(IModelViewstateData * viewstateData, IPowerRelayArray * relayArray, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _relayArray(relayArray), _navTonePlayer(navTonePlayer){};
 	~PX4_ManualOverrideViewstate_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -39,6 +39,7 @@ protected:
 
 private:
 	IModelViewstateData * _viewstateData;
+	INavigationTones * _navTonePlayer;
 	IPowerRelayArray * _relayArray;
 };
 
@@ -60,7 +61,7 @@ inline bool PX4_ManualOverrideViewstate_TaskHandler::HandleTask(TaskItem * _task
 				nextSelectedListIndex = 0;
 			}
 			else if (currentSelectedIndex < relayCount - 1) { ++nextSelectedListIndex; }	
-			
+			_navTonePlayer->playNavTone();
 			break;
 
 		case TaskAlias::TASKALIAS_NAVIGATION_MENU_MOVE_LEFT:
@@ -73,6 +74,7 @@ inline bool PX4_ManualOverrideViewstate_TaskHandler::HandleTask(TaskItem * _task
 				--nextSelectedListIndex;
 			}
 
+			_navTonePlayer->playNavTone();
 			break;
 
 		case TaskAlias::TASKALIAS_NAVIGATION_MENU_SELECT:
@@ -99,7 +101,9 @@ inline bool PX4_ManualOverrideViewstate_TaskHandler::HandleTask(TaskItem * _task
 						break;
 				}
 			}
-			break;
+
+			_navTonePlayer->playSelectTone();
+			break;			
 	}
 
 	ISelectableNavigationMap * const map = _viewstateData->GetNavigationMap();

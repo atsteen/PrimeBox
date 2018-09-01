@@ -26,8 +26,8 @@
 class PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _taskData(taskData){};
+	PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler(IModelViewstateData * viewstateData, IModelTaskData * taskData, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _taskData(taskData), _navTonePlayer(navTonePlayer){};
 	~PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -43,6 +43,7 @@ private:
 	IModelViewstateData * _viewstateData;
 	IViewstateMapGenerator * _mapGenerator;
 	IModelTaskData * _taskData;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -52,17 +53,22 @@ inline bool PX4_ScheduledTasksConfig_DeleteTaskConfView_TaskHandler::HandleTask(
 	ISelectableNavigationMap * map = _viewstateData->GetNavigationMap(); 
 	const SelectableViewstateElementAlias currentlySelectedElement = map->CurrentSelection()->selectedElement;
 	ComponentAssociation taskAssociation(*_taskData->GetCreateSchdTaskTarget());
+	const int selectedElementIndex = _viewstateData->GetViewstateSelectableElementIndex();
 
-	if (currentlySelectedElement == SelectableViewstateElementAlias::SELECTABLE_SCHEDULED_TASK_DELETE_CONFYES_ELEMENT)
-	{
-		const int selectedElementIndex = _viewstateData->GetViewstateSelectableElementIndex();
+	switch(currentlySelectedElement) {
+	case SelectableViewstateElementAlias::SELECTABLE_SCHEDULED_TASK_DELETE_CONFYES_ELEMENT :		
 		_taskData->FreeScheduledTaskDetailByIndex(selectedElementIndex);
 		if (selectedElementIndex > 0) { _viewstateData->SetViewstateSelectableElementIndex(selectedElementIndex - 1); }
+		_navTonePlayer->playSelectTone();
+		break;
+
+	default:
+		_navTonePlayer->playBackSelectTone();
 	}
 	
 	map = _mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_SCHEDULED_TASK_DELETE_TASK_VIEW);
 	map->SetSelection(SelectableViewstateElementAlias::SELECTABLE_ELEMENT_DYNAMIC);
-	_viewstateData->SetNavigationMap(map);
+	_viewstateData->SetNavigationMap(map);	
 
 	return true;
 }

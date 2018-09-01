@@ -27,8 +27,8 @@
 class PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler(IModelViewstateData * viewstateData, IModelEnvAirData * envAirData, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _envAirData(envAirData), _mapGenerator(mapGenerator){};
+	PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler(IModelViewstateData * viewstateData, IModelEnvAirData * envAirData, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _envAirData(envAirData), _mapGenerator(mapGenerator), _navTonePlayer(navTonePlayer){};
 	~PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -44,6 +44,7 @@ private:
 	IModelViewstateData * _viewstateData;
 	IModelEnvAirData * _envAirData;
 	IViewstateMapGenerator * _mapGenerator;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -71,6 +72,7 @@ inline bool PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler::HandleTask(T
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_THREESEGMENT));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 		case SELECTABLE_ENVIRONMENT_FAN_CIRC_NIGHT_DUTY_SET_ELEMENT:
@@ -86,6 +88,7 @@ inline bool PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler::HandleTask(T
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_THREESEGMENT));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 		case SELECTABLE_ENVIRONMENT_FAN_CIRC_CYCLE_DURATION_SET_ELEMENT:
@@ -101,6 +104,7 @@ inline bool PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler::HandleTask(T
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_THREESEGMENT));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 		case SELECTABLE_ENVIRONMENT_FAN_CIRC_CYCLE_MODE_SET_ELEMENT:
@@ -116,6 +120,7 @@ inline bool PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler::HandleTask(T
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_BOOLEAN_ENABLE_DISABLE));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 		case SELECTABLE_ENVIRONMENT_FAN_EX_DAY_DUTY_SET_ELEMENT:
@@ -131,6 +136,7 @@ inline bool PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler::HandleTask(T
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_THREESEGMENT));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 		case SELECTABLE_ENVIRONMENT_FAN_EX_NIGHT_DUTY_SET_ELEMENT:
@@ -146,6 +152,7 @@ inline bool PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler::HandleTask(T
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_THREESEGMENT));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 		case SELECTABLE_ENVIRONMENT_FAN_EX_CYCLE_DURATION_SET_ELEMENT:
@@ -161,6 +168,7 @@ inline bool PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler::HandleTask(T
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_THREESEGMENT));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 		case SELECTABLE_ENVIRONMENT_FAN_EX_CYCLE_MODE_SET_ELEMENT:
@@ -176,6 +184,7 @@ inline bool PX4_EnvironmentSettings_FanCycle_Viewstate_TaskHandler::HandleTask(T
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_BOOLEAN_ENABLE_DISABLE));
+			_navTonePlayer->playSelectTone();
 			return true;
 	}
 

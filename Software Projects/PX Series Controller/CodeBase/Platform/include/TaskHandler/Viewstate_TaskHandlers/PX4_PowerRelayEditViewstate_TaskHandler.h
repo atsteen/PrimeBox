@@ -25,8 +25,8 @@
 class PX4_PowerRelayEditViewstate_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_PowerRelayEditViewstate_TaskHandler(IModelViewstateData * viewstateData, IViewstateMapGenerator * mapGenerator, IPowerRelayArray * relayArray)
-		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _relayArray(relayArray){};
+	PX4_PowerRelayEditViewstate_TaskHandler(IModelViewstateData * viewstateData, IViewstateMapGenerator * mapGenerator, IPowerRelayArray * relayArray, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _mapGenerator(mapGenerator), _relayArray(relayArray), _navTonePlayer(navTonePlayer){};
 	~PX4_PowerRelayEditViewstate_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -42,6 +42,7 @@ private:
 	IModelViewstateData * _viewstateData;
 	IViewstateMapGenerator * _mapGenerator;
 	IPowerRelayArray * _relayArray;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_PowerRelayEditViewstate_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -58,6 +59,7 @@ inline bool PX4_PowerRelayEditViewstate_TaskHandler::HandleTask(TaskItem * _task
 		ISelectableNavigationMap * newMap = _mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_POWER_RELAY_SETTINGS_VIEW);
 		newMap->SetSelection(SelectableViewstateElementAlias::SELECTABLE_ELEMENT_DYNAMIC);
 		_viewstateData->SetNavigationMap(newMap);
+		_navTonePlayer->playBackSelectTone();
 		return true;
 	}
 
@@ -76,6 +78,8 @@ inline bool PX4_PowerRelayEditViewstate_TaskHandler::HandleTask(TaskItem * _task
 		default:
 			relayConfig.typeAssociation = LIGHT_PRIMARY;
 		}
+
+		_navTonePlayer->playSelectTone();
 	}
 
 	if (currentlySelectedElement == SelectableViewstateElementAlias::SELECTABLE_EDIT_RELAY_GROUP)
@@ -93,6 +97,7 @@ inline bool PX4_PowerRelayEditViewstate_TaskHandler::HandleTask(TaskItem * _task
 		default:
 			relayConfig.groupAssociation = GROUP_A;
 		}
+		_navTonePlayer->playSelectTone();
 	}
 
 	_relayArray->SetRelayComponentAssociationByIndex(currentlySelectedRelayIndex, &relayConfig);

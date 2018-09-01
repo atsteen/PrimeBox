@@ -28,12 +28,12 @@ class PX4_EnvironmentSettings_LightCycleView_TaskHandler
 	: public ITaskHandler
 {
 public:
-	PX4_EnvironmentSettings_LightCycleView_TaskHandler(IModelViewstateData * viewstateData, IModelEnvLightData * envLightData, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _envLightData(envLightData), _mapGenerator(mapGenerator) {};
+	PX4_EnvironmentSettings_LightCycleView_TaskHandler(IModelViewstateData * viewstateData, IModelEnvLightData * envLightData, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _envLightData(envLightData), _mapGenerator(mapGenerator), _navTonePlayer(navTonePlayer){};
 
 	~PX4_EnvironmentSettings_LightCycleView_TaskHandler() {};
 
-	static bool HandleIt() {};
+	static bool HandleIt(){};
 
 	// Inherited via ITaskHandler
 	virtual bool HandleTask(TaskItem *) override;
@@ -46,6 +46,7 @@ private:
 	IModelViewstateData * _viewstateData;
 	IModelEnvLightData * _envLightData;
 	IViewstateMapGenerator * _mapGenerator;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_EnvironmentSettings_LightCycleView_TaskHandler::_CanHandleTask(TaskItem * _taskItem)
@@ -84,6 +85,7 @@ inline bool PX4_EnvironmentSettings_LightCycleView_TaskHandler::HandleTask(TaskI
 
 		_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 		_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_TIME));
+		_navTonePlayer->playSelectTone();
 		return true;
 
 	case SELECTABLE_ENVIRONMENT_SUNSET_SET_ELEMENT:
@@ -99,6 +101,7 @@ inline bool PX4_EnvironmentSettings_LightCycleView_TaskHandler::HandleTask(TaskI
 
 		_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 		_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_TIME));
+		_navTonePlayer->playSelectTone(); 
 		return true;
 
 	case SELECTABLE_ENVIRONMENT_SUN_CYCLE_SET_ELEMENT:
@@ -114,11 +117,13 @@ inline bool PX4_EnvironmentSettings_LightCycleView_TaskHandler::HandleTask(TaskI
 
 		_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 		_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_BOOLEAN_ENABLE_DISABLE));
+		_navTonePlayer->playSelectTone(); 
 		return true;
 
 	default:
 		ISelectableNavigationMap * newMap = _mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_ENVIRONMENT_SETTINGS_VIEW);
 		_viewstateData->SetNavigationMap(newMap);
+		_navTonePlayer->playBackSelectTone();
 	}
 
 	return false;

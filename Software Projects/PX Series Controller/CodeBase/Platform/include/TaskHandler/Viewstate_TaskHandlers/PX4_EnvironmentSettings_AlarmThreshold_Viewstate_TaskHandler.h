@@ -28,8 +28,8 @@
 class PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler(IModelViewstateData * viewstateData, IModelEnvAirData * envAirData, IModelSystemData * systemData, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _envAirData(envAirData), _systemData(systemData), _mapGenerator(mapGenerator){};
+	PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler(IModelViewstateData * viewstateData, IModelEnvAirData * envAirData, IModelSystemData * systemData, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _envAirData(envAirData), _systemData(systemData), _mapGenerator(mapGenerator), _navTonePlayer(navTonePlayer){};
 	~PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -46,6 +46,7 @@ private:
 	IModelEnvAirData * _envAirData;
 	IViewstateMapGenerator * _mapGenerator;
 	IModelSystemData * _systemData;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -73,6 +74,7 @@ inline bool PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler::Handle
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_THREESEGMENT));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 		case SELECTABLE_ENVIRONMENT_OVERHUM_ALARM_SET_ELEMENT:
@@ -88,6 +90,7 @@ inline bool PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler::Handle
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_THREESEGMENT));
+			_navTonePlayer->playSelectTone();
 			return true;
 
 		case SELECTABLE_ENVIRONMENT_LOGFULL_ALARM_SET_ELEMENT:
@@ -103,6 +106,7 @@ inline bool PX4_EnvironmentSettings_AlarmThreshold_Viewstate_TaskHandler::Handle
 
 			_viewstateData->RegisterDynamicDataProxy(dynamicDataProxy);
 			_viewstateData->SetNavigationMap(_mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_INPUT_PROMPT_BOOLEAN_ENABLE_DISABLE));
+			_navTonePlayer->playSelectTone();
 			return true;		
 	}
 

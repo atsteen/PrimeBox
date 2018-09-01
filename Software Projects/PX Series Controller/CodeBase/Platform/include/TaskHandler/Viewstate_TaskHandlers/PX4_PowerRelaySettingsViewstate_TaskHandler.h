@@ -25,8 +25,8 @@
 class PX4_PowerRelaySettingsViewstate_TaskHandler : public ITaskHandler
 {
 public:
-	PX4_PowerRelaySettingsViewstate_TaskHandler(IModelViewstateData * viewstateData, IPowerRelayArray * relayArray, IViewstateMapGenerator * mapGenerator)
-		: _viewstateData(viewstateData), _relayArray(relayArray), _mapGenerator(mapGenerator){};
+	PX4_PowerRelaySettingsViewstate_TaskHandler(IModelViewstateData * viewstateData, IPowerRelayArray * relayArray, IViewstateMapGenerator * mapGenerator, INavigationTones * navTonePlayer)
+		: _viewstateData(viewstateData), _relayArray(relayArray), _mapGenerator(mapGenerator), _navTonePlayer(navTonePlayer){};
 	~PX4_PowerRelaySettingsViewstate_TaskHandler() {};
 
 	static bool HandleIt() {};
@@ -42,6 +42,7 @@ private:
 	IModelViewstateData * _viewstateData;
 	IPowerRelayArray * _relayArray;
 	IViewstateMapGenerator * _mapGenerator;
+	INavigationTones * _navTonePlayer;
 };
 
 inline bool PX4_PowerRelaySettingsViewstate_TaskHandler::HandleTask(TaskItem * _taskItem)
@@ -62,7 +63,7 @@ inline bool PX4_PowerRelaySettingsViewstate_TaskHandler::HandleTask(TaskItem * _
 				selectedElementIndex = 0;
 			}
 			else if (selectedElementIndex < relayCount - 1) { ++selectedElementIndex; }
-			
+			_navTonePlayer->playNavTone();
 			break;
 
 		case TaskAlias::TASKALIAS_NAVIGATION_MENU_MOVE_LEFT:
@@ -74,7 +75,7 @@ inline bool PX4_PowerRelaySettingsViewstate_TaskHandler::HandleTask(TaskItem * _
 			{				
 				--selectedElementIndex;
 			}
-
+			_navTonePlayer->playNavTone();
 			break;
 
 		case TaskAlias::TASKALIAS_NAVIGATION_MENU_SELECT:
@@ -83,6 +84,7 @@ inline bool PX4_PowerRelaySettingsViewstate_TaskHandler::HandleTask(TaskItem * _
 				selectedViewstate = ViewstateAlias::VIEWSTATEALIAS_POWER_RELAY_EDIT_VIEW;
 				selectedElement = SelectableViewstateElementAlias::SELECTABLE_BACK_ELEMENT;
 			}
+			_navTonePlayer->playSelectTone();
 			break;
 	}
 
