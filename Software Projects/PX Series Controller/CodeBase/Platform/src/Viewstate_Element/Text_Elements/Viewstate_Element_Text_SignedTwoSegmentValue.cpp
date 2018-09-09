@@ -15,6 +15,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
+#pragma once
+#pragma warning (disable : 4996) //disable VS compiler error on itoa use
+
 #include "..\..\..\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_SignedTwoSegmentValue.h"
 #include <stdlib.h>
 
@@ -33,7 +36,7 @@ int Viewstate_Element_Text_SignedTwoSegmentValue::emplace(char * target, const i
 	if (i < -99) { i = -99; } //two segment min
 	if (i >= 0) { strcat(valText, "+"); }
 
-	_itoa(i, buff, 10);
+	itoa(i, buff, 10);
 
 	strncat(valText, buff, 2);
 	strncat(valText, ")", 1);

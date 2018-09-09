@@ -16,12 +16,13 @@
 */
 
 #pragma once
-#include "..\..\include\PreProcDirectives.h"
-#include "..\..\include\ComponentModule_imp\ComponentModule_Imp_CombinedTempHumSensor.h"
+
+#include "PX4_Config.h"
+#include "ComponentModule_Imp_CombinedTempHumSensor.h"
 
 #if defined(TARGET_PLAT_AVR)
 
-#include "..\..\.\pb\include\libraries\Adafruit_HTU21DF\Adafruit_HTU21DF.h"
+#include <Adafruit_HTU21DF.h>
 
 class ComponentModule_Imp_CombinedTempHumSensor_HTU21DF :
 	public ComponentModule_Imp_CombinedTempHumSensor

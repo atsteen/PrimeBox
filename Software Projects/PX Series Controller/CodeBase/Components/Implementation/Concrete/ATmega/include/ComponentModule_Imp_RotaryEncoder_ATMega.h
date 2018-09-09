@@ -16,19 +16,20 @@
 */
 
 #pragma once
-#include "..\..\include\PreProcDirectives.h"
-#include "..\..\include\ComponentModule_imp\ComponentModule_Imp_RotaryEncoder.h"
+#include "PX4_Config.h"
+#include "ComponentModule_Imp_RotaryEncoder.h"
 
 #if defined(TARGET_PLAT_AVR)
 
-#include "..\..\include\SharedStructure\Rotary.h"
-
+#include <Rotary.h>
 #include <Wire.h>
 #include <Arduino.h>
 
 #define ENCODER_D1 2
 #define ENCODER_D2 3
 #define ENCODER_SW 19
+
+
 
 class ComponentModule_Imp_RotaryEncoder_ATMega :
 	public ComponentModule_Imp_RotaryEncoder
@@ -39,6 +40,9 @@ public:
 
 	// Inherited via ComponentModule_Imp
 	virtual bool DoSelfDiagnostic_Imp() override;
+
+	// Inherited via ComponentModule_Imp_RotaryEncoder
+	virtual TaskAlias GetFlaggedTask() override;
 };
 
 #endif 

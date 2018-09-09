@@ -19,7 +19,6 @@
 
 #include "..\..\..\Platform\include\SharedStructure\SharedInterface\IRtcLogger.h"
 #include "..\..\..\Components\ImplementationFactory\include\ComponentModuleImp_Factory_PX4.h"
-#include "..\..\..\Components\ImplementationFactory\include\ComponentModuleImp_Factory_PX4_Win32.h"
 #include "..\..\..\Components\Abstraction\Refined\include\ComponentModule_RTC_Standard.h"
 #include "..\..\..\Components\Abstraction\Refined\include\ComponentModule_DataLogger_Standard.h"
 

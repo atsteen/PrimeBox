@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "..\..\include\ComponentModule_Imp\ComponentModule_Imp_CombinedTempHumSensor_HTU21DF.h"
+#include "..\include\componentmodule_imp_combinedtemphumsensor_htu21df_atmega.h"
 
 #if defined(TARGET_PLAT_AVR)
 

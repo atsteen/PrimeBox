@@ -177,7 +177,10 @@ bool ComponentPackage_PowerRelayArray::AddPowerRelay(const PersistentComponentAl
 	{
 		if (!_powerRelays[i])
 		{
-			ComponentAssociation association = { group, type };
+			ComponentAssociation association;
+			association.typeAssociation = type;
+			association.groupAssociation = group;
+
 			_powerRelays[i] = new ComponentModule_PowerRelay_Standard(_componentImpFactory->Make_PowerRelay(componentAlias), componentAlias, dataAlias, _persistentDataCoordinator);
 			if (_powerRelays[i]->GetComponentAssociation()->typeAssociation == ComponentTypeAssociation::TYPE_NOT_SET) { _powerRelays[i]->SetComponentAssociation(&association); }
 

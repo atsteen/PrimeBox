@@ -168,6 +168,9 @@
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\PowerRelayStateData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ToneItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\CodeBase\Platform\src\Viewstate_String_Generator\Viewstate_String_Generator.cpp">

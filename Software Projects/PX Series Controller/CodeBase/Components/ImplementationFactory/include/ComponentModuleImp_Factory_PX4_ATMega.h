@@ -23,36 +23,32 @@
 
 #include "..\..\Implementation\Concrete\ATmega\include\ComponentModule_Imp_ASCIIDisplay_HD44780_Parallel_ATMega.h"
 #include "..\..\Implementation\Concrete\ATmega\include\ComponentModule_Imp_RTC_ATMega.h"
-#include "..\..\Implementation\Concrete\ATmega\include\ComponentModule_Imp_CombinedTempHumSensor_HTU21DF.h"
+#include "..\..\Implementation\Concrete\ATmega\include\ComponentModule_Imp_CombinedTempHumSensor_HTU21DF_ATmega.h"
 #include "..\..\Implementation\Concrete\ATmega\include\ComponentModule_Imp_PowerRelay_ATMega.h"
 #include "..\..\Implementation\Concrete\ATmega\include\ComponentModule_Imp_RotaryEncoder_ATMega.h"
 #include "..\..\Implementation\Concrete\ATmega\include\ComponentModule_Imp_DataLogger_ATMega.h"
 #include "..\..\Implementation\Concrete\ATmega\include\ComponentModule_Imp_Buzzer_ATMega.h"
+#include "..\..\Implementation\Concrete\ATmega\include\ComponentModule_Imp_NvMemoryManager_ATMega.h"
 
 class ComponentModuleImp_Factory_PX4_ATMega :
 	public ComponentModuleImp_Factory_PX4
 {
 public:
 	ComponentModuleImp_Factory_PX4_ATMega();
-	virtual ~ComponentModuleImp_Factory_PX4_ATMega() override; 
-
-	//TODO Replace with PersistentComponentAlias->pin mapper
-	//const int PowerRelay_Trigger_Pin_Pump = 4;
-	//const int PowerRelay_Trigger_Pin_Fan = 5;
-	//const int PowerRelay_Trigger_Pin_LightA = 6;
-	//const int PowerRelay_Trigger_Pin_LightB = 7;
+	virtual ~ComponentModuleImp_Factory_PX4_ATMega() override;
 
 	// Inherited via ComponentModuleImp_Factory_PX4
 	virtual ComponentModule_Imp_ASCIIDisplay* Make_ASCIIDisplay() override;
 	virtual ComponentModule_Imp_RTC* Make_RTC() override;
 	virtual ComponentModule_Imp_CombinedTempHumSensor* Make_CombinedAirSensor() override;
-	virtual ComponentModule_Imp_PowerRelay * Make_PowerRelay_Pump() override;
-	virtual ComponentModule_Imp_PowerRelay * Make_PowerRelay_Fan() override;
-	virtual ComponentModule_Imp_PowerRelay * Make_PowerRelay_LightA() override;
-	virtual ComponentModule_Imp_PowerRelay * Make_PowerRelay_LightB() override;
-	virtual ComponentModule_Imp_RotaryEncoder * Make_Control_RotaryEncoder() override;
-	virtual ComponentModule_Imp_DataLogger * Make_DataLogger() override;
+	virtual ComponentModule_Imp_PowerRelay * Make_PowerRelay(const PersistentComponentAlias) override;
+	virtual ComponentModule_Imp_RotaryEncoder* Make_Control_RotaryEncoder() override;
+	virtual ComponentModule_Imp_DataLogger* Make_DataLogger() override;
 	virtual ComponentModule_Imp_Buzzer* Make_Buzzer() override;
+	virtual ComponentModule_Imp_NvMemoryManager* Make_NvMemoryManager() override;
+
+private:
+	const int getPinAssignmentForComponent(const PersistentComponentAlias);
 };
 
 #endif

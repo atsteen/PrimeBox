@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "..\..\include\ComponentModule_Imp\ComponentModule_Imp_NvMemoryManager_ATMega.h"
+#include "..\include\ComponentModule_Imp_NvMemoryManager_ATMega.h"
 
 #if defined(TARGET_PLAT_AVR)
 
@@ -80,61 +80,80 @@ bool ComponentModule_Imp_NvMemoryManager_ATMega::ReadPersistentItem(SystemSKU * 
 {
 	int address = _persistentDataMap.GetAddress(*dataItem, alias);
 	EEPROM.readBlock(address, *dataItem);
-	return false;
+	return true;
 }
 
-bool ComponentModule_Imp_NvMemoryManager_ATMega::ReadPersistentItem(ScheduledTaskDetailPool * dataItem, const PersistentDataAlias alias)
+bool ComponentModule_Imp_NvMemoryManager_ATMega::ReadPersistentItem(PowerRelayStateData * relayState, const PersistentDataAlias alias)
+{
+	int address = _persistentDataMap.GetAddress(*relayState, alias);
+	EEPROM.readBlock(address, *relayState);
+	return true;
+}
+
+bool ComponentModule_Imp_NvMemoryManager_ATMega::ReadPersistentItem(ScheduledTaskDetail taskDetails[SCHEDULED_TASK_DETAIL_COUNT], const PersistentDataAlias alias)
 {	
-	int address = _persistentDataMap.GetAddress(*dataItem, alias);
-
-	//Serial.print(F("Reading ScheduledTaskDetailPool item from EEPROM address "));
-	//Serial.println(address);
-
-	dataItem->FreeAllScheduledTaskDetails(); //ensure all new details
-
-	for(int i = 0; i < SCHEDULED_TASK_DETAIL_COUNT; ++i)
+	for(int i = 0; i < SCHEDULED_TASK_DETAIL_COUNT; i++)
 	{
-		ScheduledTaskDetail * dataItemTaskDetail = dataItem->GetNewScheduledTaskDetail();
-		if(dataItemTaskDetail)
-		{
-			sTaskDetail details;
-			uint8_t offset = sizeof(*dataItemTaskDetail)*i;
-			
-			//Serial.print(F("Reading ScheduledTaskDetail from EEPROM address "));
-			//Serial.println(address + offset);
-
-			EEPROM.readBlock(address + offset, details);
-
-			//if EEPROM values do not appear valid, move to next iteration
-			if(details.taskAlias == 0){ continue; }
-
-			//Serial.print(F("Assigning ScheduledTaskDetail ["));
-			//Serial.print(i);
-			//Serial.print(F("] from EEPROM address "));
-			//Serial.print(address + offset);
-			//Serial.print(F(", timeSig="));
-			//Serial.print(details.triggerhh);
-			//Serial.print(F(":"));
-			//Serial.print(details.triggermm);
-			//Serial.print(F(":"));
-			//Serial.print(details.triggerss);
-			//Serial.print(F(", alias="));
-			//Serial.print(details.taskAlias);
-			//Serial.print(F(", isEnabled="));
-			//Serial.println(details.taskIsEnabled);
-
-			dataItemTaskDetail->_scheduledExecutionTime.SetSignature(0, 0, 0, details.triggerhh, details.triggermm, details.triggerss);
-			dataItemTaskDetail->_scheduledTaskAlias = details.taskAlias;
-			dataItemTaskDetail->_isEnabaled = details.taskIsEnabled;
-		}
-		else
-		{
-			//Serial.println(F("ScheduledTaskDetailPool is full!"));
-		}
+		taskDetails[i].ClearTaskDetailData();
 	}
-
-	return false;
+	
+	int address = _persistentDataMap.GetAddress(taskDetails, alias);
+	EEPROM.readBlock(address, taskDetails);
+	return true;
 }
+
+//bool ComponentModule_Imp_NvMemoryManager_ATMega::ReadPersistentItem(const ScheduledTaskDetail[SCHEDULED_TASK_DETAIL_COUNT], const PersistentDataAlias alias)
+//{	
+	//int address = _persistentDataMap.GetAddress(*dataItem, alias);
+//
+	////Serial.print(F("Reading ScheduledTaskDetailPool item from EEPROM address "));
+	////Serial.println(address);
+//
+	//dataItem->FreeAllScheduledTaskDetails(); //ensure all new details
+//
+	//for(int i = 0; i < SCHEDULED_TASK_DETAIL_COUNT; ++i)
+	//{
+		//ScheduledTaskDetail * dataItemTaskDetail = dataItem->GetNewScheduledTaskDetail();
+		//if(dataItemTaskDetail)
+		//{
+			//sTaskDetail details;
+			//uint8_t offset = sizeof(*dataItemTaskDetail)*i;
+			//
+			////Serial.print(F("Reading ScheduledTaskDetail from EEPROM address "));
+			////Serial.println(address + offset);
+//
+			//EEPROM.readBlock(address + offset, details);
+//
+			////if EEPROM values do not appear valid, move to next iteration
+			//if(details.taskAlias == 0){ continue; }
+//
+			////Serial.print(F("Assigning ScheduledTaskDetail ["));
+			////Serial.print(i);
+			////Serial.print(F("] from EEPROM address "));
+			////Serial.print(address + offset);
+			////Serial.print(F(", timeSig="));
+			////Serial.print(details.triggerhh);
+			////Serial.print(F(":"));
+			////Serial.print(details.triggermm);
+			////Serial.print(F(":"));
+			////Serial.print(details.triggerss);
+			////Serial.print(F(", alias="));
+			////Serial.print(details.taskAlias);
+			////Serial.print(F(", isEnabled="));
+			////Serial.println(details.taskIsEnabled);
+//
+			//dataItemTaskDetail->_scheduledExecutionTime.SetSignature(0, 0, 0, details.triggerhh, details.triggermm, details.triggerss);
+			//dataItemTaskDetail->_scheduledTaskAlias = details.taskAlias;
+			//dataItemTaskDetail->_isEnabaled = details.taskIsEnabled;
+		//}
+		//else
+		//{
+			////Serial.println(F("ScheduledTaskDetailPool is full!"));
+		//}
+	//}
+//
+	//return false;
+//}
 
 bool ComponentModule_Imp_NvMemoryManager_ATMega::WritePersistentItem(const bool * dataItem, const PersistentDataAlias alias)
 {
@@ -180,25 +199,30 @@ bool ComponentModule_Imp_NvMemoryManager_ATMega::WritePersistentItem(const Syste
 	return EEPROM.updateBlock(address, *dataItem);
 }
 
-bool ComponentModule_Imp_NvMemoryManager_ATMega::WritePersistentItem(const ScheduledTaskDetailPool * dataItem, const PersistentDataAlias alias)
+bool ComponentModule_Imp_NvMemoryManager_ATMega::WritePersistentItem(const PowerRelayStateData * relayData, const PersistentDataAlias alias)
 {
-	int address = _persistentDataMap.GetAddress(*dataItem, alias);
-	ScheduledTaskDetailPool pool = *dataItem;
+	int address = _persistentDataMap.GetAddress(*relayData, alias);
+	return EEPROM.updateBlock(address, *relayData);
+}
 
+bool ComponentModule_Imp_NvMemoryManager_ATMega::WritePersistentItem(const ScheduledTaskDetail taskDetails[SCHEDULED_TASK_DETAIL_COUNT], const PersistentDataAlias alias)
+{
+	int address = _persistentDataMap.GetAddress(taskDetails, alias);
+	return EEPROM.updateBlock(address, taskDetails);
 	//Serial.print(F("Writing ScheduledTaskDetailPool item to EEPROM address "));
 	//Serial.println(address);
-
-	for(uint8_t i = 0; i < SCHEDULED_TASK_DETAIL_COUNT; ++i)
-	{		
-		const ScheduledTaskDetail dataItemTaskDetail = *pool.GetScheduledTaskDetail(i);
-		uint8_t offset = sizeof(dataItemTaskDetail)*i;
-
-		sTaskDetail details;
-		details.triggerhh = dataItemTaskDetail._scheduledExecutionTime.hour();
-		details.triggermm = dataItemTaskDetail._scheduledExecutionTime.minute();
-		details.triggerss = dataItemTaskDetail._scheduledExecutionTime.second();
-		details.taskAlias =	dataItemTaskDetail._scheduledTaskAlias;
-		details.taskIsEnabled =	dataItemTaskDetail._isEnabaled;
+//
+	//for(uint8_t i = 0; i < SCHEDULED_TASK_DETAIL_COUNT; ++i)
+	//{		
+		//const ScheduledTaskDetail dataItemTaskDetail = *pool.GetScheduledTaskDetail(i);
+		//uint8_t offset = sizeof(dataItemTaskDetail)*i;
+//
+		//sTaskDetail details;
+		//details.triggerhh = dataItemTaskDetail._scheduledExecutionTime.hour();
+		//details.triggermm = dataItemTaskDetail._scheduledExecutionTime.minute();
+		//details.triggerss = dataItemTaskDetail._scheduledExecutionTime.second();
+		//details.taskAlias =	dataItemTaskDetail._scheduledTaskAlias;
+		//details.taskIsEnabled =	dataItemTaskDetail._isEnabaled;
 
 		//Serial.print(F("Writing ScheduledTaskDetail ["));
 		//Serial.print(i);		
@@ -215,8 +239,8 @@ bool ComponentModule_Imp_NvMemoryManager_ATMega::WritePersistentItem(const Sched
 		//Serial.print(F(", isEnabled="));
 		//Serial.println(details.taskIsEnabled);
 
-		EEPROM.updateBlock(address + offset, details);
-	}
+		//EEPROM.updateBlock(address + offset, details);
+	//}
 
 	return true;
 }

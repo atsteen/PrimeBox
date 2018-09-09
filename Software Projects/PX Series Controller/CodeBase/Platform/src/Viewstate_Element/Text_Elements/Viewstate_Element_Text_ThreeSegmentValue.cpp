@@ -15,6 +15,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
+#pragma once
+#pragma warning (disable : 4996) //disable VS compiler error on itoa use
+
 #include "..\..\..\include\Viewstate_Element\Text_Elements\Viewstate_Element_Text_ThreeSegmentValue.h"
 #include <string.h>
 #include <stdlib.h>
@@ -37,7 +40,7 @@ int Viewstate_Element_Text_ThreeSegmentValue::emplace(char * target, const int t
 	if (i > 999) { i = 999; } //three segment max
 	if (i < 100) { strcat(valText, " "); }
 
-	_itoa(_threeSegmentValue, buff, 10);
+	itoa(_threeSegmentValue, buff, 10);
 
 	strncat(valText, buff, 3);
 	strncat(valText, _suffixSymbol, 1);

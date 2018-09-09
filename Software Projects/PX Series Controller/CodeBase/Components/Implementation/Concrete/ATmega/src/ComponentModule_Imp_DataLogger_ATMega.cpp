@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "..\..\include\ComponentModule_Imp\ComponentModule_Imp_DataLogger_ATMega.h"
+#include "..\include\ComponentModule_Imp_DataLogger_ATMega.h"
 
 #if defined(TARGET_PLAT_AVR)
 

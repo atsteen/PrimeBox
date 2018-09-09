@@ -196,7 +196,7 @@ enum ViewstateStringAlias {
 	const char componentTypeLabel[] PROGMEM = "Type";
 	const char componentGroupLabel[] PROGMEM = "Group";
 
-	const char PowerRelaySettingsViewTextTitle[] PROGMEM = "RELAY CONFIGURATION";
+	const char powerRelaySettingsViewTextTitle[] PROGMEM = "RELAY CONFIGURATION";
 
 	const char defaultTimeText[] PROGMEM = "[##:##]";
 	const char defaultRuleLineText[] PROGMEM = "--------------------";

@@ -16,12 +16,12 @@
 */
 
 #pragma once
-#include "..\..\include\PreProcDirectives.h"
-#include "..\..\include\ComponentModule_imp\ComponentModule_Imp_RTC.h"
+#include "PX4_Config.h"
+#include "ComponentModule_Imp_RTC.h"
 
 #if defined(TARGET_PLAT_AVR)
 
-#include "..\..\include\libraries\RTCLib\RTClib.h"
+#include <RTClib.h>
 #include <Wire.h>
 
 class ComponentModule_Imp_RTC_ATMega :

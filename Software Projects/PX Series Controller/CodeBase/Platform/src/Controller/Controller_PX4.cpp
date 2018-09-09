@@ -20,13 +20,17 @@
 #include "..\..\include\CommandInterpreter\CommandInterpreter_PX4.h"
 #include "..\..\include\Viewstate_Map_Generator\Viewstate_Map_Generator_PX4.h"
 
+//Host specific includes
 #if defined(TARGET_PLAT_AVR)
 #include "..\SharedStructure\MemoryProbe.h"
+#include "..\Components\ImplementationFactory\include\ComponentModuleImp_Factory_PX4_ATMega.h"
+#else
+#include "..\..\..\Components\ImplementationFactory\include\ComponentModuleImp_Factory_PX4_Win32.h"
 #endif
 
 Controller_PX4::Controller_PX4()
 {
-	//create package and component implementation factory
+	//Host specific module factory
 	#if defined(TARGET_PLAT_AVR)
 		ComponentModuleImp_Factory_PX4_ATMega impFactory;
 	#else
@@ -188,7 +192,7 @@ void Controller_PX4::LogControllerStatus()
 	_rtcLogger->LogMessage(EVENT_TEXT_LAST_USER_INPUT_TIME, dataModel_Interface->LastInputActionTime());
 
 	#if defined(TARGET_PLAT_AVR)
-	_rtcLogger->LogEvent(EVENT_TEXT_FREE_MEMORY_AVAILABLE, freeMemory());
+	_rtcLogger->LogMessage(EVENT_TEXT_FREE_MEMORY_AVAILABLE, freeMemory());
 	#endif
 
 	dataModel_Viewstate->RegisterViewstatePublish(_rtcLogger->CurrentTime());

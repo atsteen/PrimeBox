@@ -16,12 +16,13 @@
 */
 
 #pragma once
-#include "..\..\include\ComponentModule_Imp\ComponentModule_Imp_RotaryEncoder_ATMega.h"
+#include "..\include\componentmodule_imp_rotaryencoder_atmega.h"
 
 #if defined (TARGET_PLAT_AVR)
 
 Rotary rEncoder(ENCODER_D1, ENCODER_D2);
 volatile bool btnReleased = true;
+volatile TaskAlias FlaggedTask = TASKALIAS_NOT_SET;
 
 //ISR for encoder
 void isr_rotate()
@@ -58,6 +59,13 @@ ComponentModule_Imp_RotaryEncoder_ATMega::~ComponentModule_Imp_RotaryEncoder_ATM
 bool ComponentModule_Imp_RotaryEncoder_ATMega::DoSelfDiagnostic_Imp()
 {
 	return true;
+}
+
+TaskAlias ComponentModule_Imp_RotaryEncoder_ATMega::GetFlaggedTask()
+{
+	const TaskAlias currentFlaggedTask = FlaggedTask;
+	FlaggedTask = TASKALIAS_NOT_SET; // Clear flagged task
+	return currentFlaggedTask;
 }
 
 #endif

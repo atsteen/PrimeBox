@@ -16,8 +16,8 @@
 */
 
 #pragma once
-#include "..\..\include\PreProcDirectives.h"
-#include "..\..\include\ComponentModule_imp\ComponentModule_Imp_Buzzer.h"
+#include "PX4_Config.h"
+#include "ComponentModule_Imp_Buzzer.h"
 
 #if defined(TARGET_PLAT_AVR)
 

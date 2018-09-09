@@ -16,10 +16,9 @@
 */
 
 #pragma once
-#include "..\PreProcDirectives.h"
+#include "PX4_Config.h"
 #include "..\SharedStructure\TimeSignature.h"
 #include "..\SharedStructure\SystemSKU.h"
-#include "..\SharedStructure\ScheduledTaskDetailPool.h"
 #include "ComponentModule_Imp_NvMemoryManager.h"
 #include "..\SharedStructure\T_DataItemList.h"
 #include "..\SharedStructure\PersistentData\PersistentData_PX4.h"
@@ -41,13 +40,15 @@ public:
 	virtual bool ReadPersistentItem(int *, const PersistentDataAlias) override;
 	virtual bool ReadPersistentItem(TimeSignature *, const PersistentDataAlias) override;
 	virtual bool ReadPersistentItem(SystemSKU *, const PersistentDataAlias) override;
-	virtual bool ReadPersistentItem(ScheduledTaskDetailPool *, const PersistentDataAlias) override;
+	virtual bool ReadPersistentItem(PowerRelayStateData *, const PersistentDataAlias) override;
+	virtual bool ReadPersistentItem(ScheduledTaskDetail[SCHEDULED_TASK_DETAIL_COUNT], const PersistentDataAlias) override;
 
 	virtual bool WritePersistentItem(const bool *, const PersistentDataAlias) override;
 	virtual bool WritePersistentItem(const int *, const PersistentDataAlias) override;
 	virtual bool WritePersistentItem(const TimeSignature *, const PersistentDataAlias) override;
 	virtual bool WritePersistentItem(const SystemSKU *, const PersistentDataAlias) override;
-	virtual bool WritePersistentItem(const ScheduledTaskDetailPool *, const PersistentDataAlias) override;
+	virtual bool WritePersistentItem(const PowerRelayStateData *, const PersistentDataAlias) override;
+	virtual bool WritePersistentItem(const ScheduledTaskDetail[SCHEDULED_TASK_DETAIL_COUNT], const PersistentDataAlias) override;
 
 protected:
 	PersistentData_PX4 _persistentDataMap;

@@ -97,7 +97,13 @@ inline bool PX4_ScheduledTasksConfig_CreateView_TaskHandler::HandleTask(TaskItem
 		const TimeSignature * const newTaskExecutionTime = _taskData->GetCreateSchdTaskTime();
 		const ComponentAssociation * const newTaskRelayAssociation = _taskData->GetCreateSchdTaskTarget();
 
-		TaskDetailData taskDetailData = { newTaskAlias, true, *newTaskRelayAssociation, newTaskRelayIndex, *newTaskExecutionTime };
+		TaskDetailData taskDetailData;
+		taskDetailData.scheduledTaskAlias = newTaskAlias;
+		taskDetailData.isEnabaled = true;
+		taskDetailData.relayAssociation = *newTaskRelayAssociation;
+		taskDetailData.relayIndex = newTaskRelayIndex;
+		taskDetailData.scheduledExecutionTime.SetSignature(newTaskExecutionTime);
+		
 		const int newTaskDetailIndex = _taskData->AddScheduledTaskDetail(&taskDetailData);
 
 		ISelectableNavigationMap * map = _mapGenerator->GenerateMap(ViewstateAlias::VIEWSTATEALIAS_SCHEDULED_TASK_SET_EXISTING_VIEW);

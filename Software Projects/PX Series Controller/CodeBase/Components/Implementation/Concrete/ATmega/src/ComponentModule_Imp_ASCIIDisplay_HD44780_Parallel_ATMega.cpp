@@ -15,13 +15,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "..\..\include\ComponentModule_Imp\ComponentModule_Imp_ASCIIDisplay_ATMega_Direct.h"
+#include "..\include\componentmodule_imp_asciidisplay_hd44780_parallel_atmega.h"
 
 #if defined(TARGET_PLAT_AVR)
 
+#include <Wire.h>
+#include <Arduino.h>
 #include <string.h>
-#include "..\include\Viewstate_String_Generator\Viewstate_String_Generator.h"
-
+#include "..\..\..\..\..\Platform\include\Viewstate_String_Generator\Viewstate_String_Generator.h"
 
 ComponentModule_Imp_ASCIIDisplay_ATMega_Direct::ComponentModule_Imp_ASCIIDisplay_ATMega_Direct()
 {

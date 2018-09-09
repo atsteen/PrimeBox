@@ -16,6 +16,7 @@
 */
 
 #include "..\..\include\Viewstate_Element\Viewstate_Element_Text.h"
+#include <limits.h>
 
 Viewstate_Element_Text::Viewstate_Element_Text(const int sIndex, const int iLevel, const SelectableViewstateElementAlias veAlias) 
 	: _startIndex(sIndex), imbricationLevel(iLevel), alias(veAlias){}
@@ -30,13 +31,14 @@ int Viewstate_Element_Text::emplace(char * targetStr, const int){ return 0;}
 
 int Viewstate_Element_Text::_emplace(char * targetStr, const int targetStrSize, const char * originStr)
 {
-	int emplacedLen = _startIndex + strlen(originStr);
+	int originStrSize = strlen(originStr) > INT_MAX ? INT_MAX : (int)strlen(originStr);
+	int emplacedLen = _startIndex + originStrSize;
 	int charCount = 0;
 
 	if (_startIndex >= targetStrSize - 1) { return 0; }
 	else
 	{
-		charCount = emplacedLen >= targetStrSize ? targetStrSize - (_startIndex + 1) : strlen(originStr);
+		charCount = emplacedLen >= targetStrSize ? targetStrSize - (_startIndex + 1) : originStrSize;
 
 		for (int i = 0, t = _startIndex; i < charCount; i++, t++)
 		{

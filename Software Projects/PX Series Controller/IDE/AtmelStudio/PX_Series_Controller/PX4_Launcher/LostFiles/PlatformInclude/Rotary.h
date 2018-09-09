@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "..\..\include\PreProcDirectives.h"
+#include "PX4_Config.h"
 
 #if defined (TARGET_PLAT_AVR)
 /*

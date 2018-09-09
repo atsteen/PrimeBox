@@ -16,8 +16,8 @@
 */
 
 #pragma once
-#include "..\..\include\PreProcDirectives.h"
-#include "..\..\include\ComponentModule_Imp\ComponentModule_Imp_ASCIIDisplay.h"
+#include "PX4_Config.h"
+#include "ComponentModule_Imp_ASCIIDisplay.h"
 
 #if defined(TARGET_PLAT_AVR)
 

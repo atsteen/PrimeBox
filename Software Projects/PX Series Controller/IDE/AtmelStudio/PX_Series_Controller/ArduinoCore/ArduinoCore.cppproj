@@ -32,15 +32,15 @@
     <EraseKey />
     <AsfFrameworkConfig>
       <framework-data xmlns="">
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.40.0" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.40.0" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -72,6 +72,17 @@
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
       <Value>..\include\core</Value>
       <Value>..\include\variants\mega</Value>
+      <Value>..\include\libraries\Wire\src</Value>
+      <Value>..\include\libraries\Wire\src\utility</Value>
+      <Value>..\include\libraries\LiquidCrystal\src</Value>
+      <Value>..\include\libraries\RTClib</Value>
+      <Value>..\include\libraries\Adafruit_HTU21DF</Value>
+      <Value>..\include\libraries\SD\src</Value>
+      <Value>..\include\libraries\SD\src\utility</Value>
+      <Value>..\include\libraries\SPI\src</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx\extras\Documentation</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx\extras\Documentation\html</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -100,6 +111,17 @@
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
       <Value>..\include\core</Value>
       <Value>..\include\variants\mega</Value>
+      <Value>..\include\libraries\Wire\src</Value>
+      <Value>..\include\libraries\Wire\src\utility</Value>
+      <Value>..\include\libraries\LiquidCrystal\src</Value>
+      <Value>..\include\libraries\RTClib</Value>
+      <Value>..\include\libraries\Adafruit_HTU21DF</Value>
+      <Value>..\include\libraries\SD\src</Value>
+      <Value>..\include\libraries\SD\src\utility</Value>
+      <Value>..\include\libraries\SPI\src</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx\extras\Documentation</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx\extras\Documentation\html</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
@@ -153,6 +175,17 @@
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
       <Value>..\include\core</Value>
       <Value>..\include\variants\mega</Value>
+      <Value>..\include\libraries\Wire\src</Value>
+      <Value>..\include\libraries\Wire\src\utility</Value>
+      <Value>..\include\libraries\LiquidCrystal\src</Value>
+      <Value>..\include\libraries\RTClib</Value>
+      <Value>..\include\libraries\Adafruit_HTU21DF</Value>
+      <Value>..\include\libraries\SD\src</Value>
+      <Value>..\include\libraries\SD\src\utility</Value>
+      <Value>..\include\libraries\SPI\src</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx\extras\Documentation</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx\extras\Documentation\html</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -181,6 +214,18 @@
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
       <Value>..\include\core</Value>
       <Value>..\include\variants\mega</Value>
+      <Value>..\include\libraries\Wire\src</Value>
+      <Value>..\include\libraries\Wire\src\utility</Value>
+      <Value>..\include\libraries\LiquidCrystal\src</Value>
+      <Value>..\include\libraries\RTClib</Value>
+      <Value>..\include\libraries\Adafruit_HTU21DF</Value>
+      <Value>../include/libraries/Rotary</Value>
+      <Value>..\include\libraries\SD\src</Value>
+      <Value>..\include\libraries\SD\src\utility</Value>
+      <Value>..\include\libraries\SPI\src</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx\extras\Documentation</Value>
+      <Value>..\include\libraries\Arduino-EEPROMEx\extras\Documentation\html</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
@@ -263,6 +308,75 @@
     <Compile Include="include\core\WString.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\libraries\Adafruit_HTU21DF\Adafruit_HTU21DF.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino-EEPROMEx\EEPROMex.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino-EEPROMEx\EEPROMVar.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\LiquidCrystal\src\LiquidCrystal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\NewLiquidCrystal\I2CIO.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\NewLiquidCrystal\I2CIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\NewLiquidCrystal\LCD.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\NewLiquidCrystal\LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\NewLiquidCrystal\LiquidCrystal_I2C.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\NewLiquidCrystal\LiquidCrystal_I2C.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Rotary\rotary.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\RTClib\RTClib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SD\src\SD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SD\src\utility\FatStructs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SD\src\utility\Sd2Card.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SD\src\utility\Sd2PinMap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SD\src\utility\SdFat.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SD\src\utility\SdFatmainpage.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SD\src\utility\SdFatUtil.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SD\src\utility\SdInfo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPI\src\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Wire\src\utility\twi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Wire\src\Wire.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\variants\mega\pins_arduino.h">
       <SubType>compile</SubType>
     </Compile>
@@ -341,15 +455,138 @@
     <Compile Include="src\core\WString.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\libraries\Adafruit_HTU21DF\Adafruit_HTU21DF.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Arduino-EEPROMEx\EEPROMex.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\LiquidCrystal\src\LiquidCrystal.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Rotary\rotary.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\RTClib\RTClib.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SD\src\File.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SD\src\SD.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SD\src\utility\Sd2Card.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SD\src\utility\SdFile.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SD\src\utility\SdVolume.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPI\src\SPI.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Wire\src\utility\twi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Wire\src\Wire.cpp">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="include\" />
     <Folder Include="include\core\" />
+    <Folder Include="include\libraries\" />
+    <Folder Include="include\libraries\Adafruit_HTU21DF\" />
+    <Folder Include="include\libraries\Arduino-EEPROMEx\" />
+    <Folder Include="include\libraries\Arduino-EEPROMEx\extras\" />
+    <Folder Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\" />
+    <Folder Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\" />
+    <Folder Include="include\libraries\LiquidCrystal\" />
+    <Folder Include="include\libraries\LiquidCrystal\src\" />
+    <Folder Include="include\libraries\NewLiquidCrystal" />
+    <Folder Include="include\libraries\Rotary" />
+    <Folder Include="include\libraries\RTClib\" />
+    <Folder Include="include\libraries\SD\" />
+    <Folder Include="include\libraries\SD\src\" />
+    <Folder Include="include\libraries\SD\src\utility\" />
+    <Folder Include="include\libraries\SPI\" />
+    <Folder Include="include\libraries\SPI\src\" />
+    <Folder Include="include\libraries\Wire\" />
+    <Folder Include="include\libraries\Wire\src\" />
+    <Folder Include="include\libraries\Wire\src\utility\" />
     <Folder Include="include\variants\" />
     <Folder Include="include\variants\mega\" />
     <Folder Include="src\" />
     <Folder Include="src\core\" />
     <Folder Include="src\core\PreprocessingAssembly\" />
+    <Folder Include="src\libraries\" />
+    <Folder Include="src\libraries\Adafruit_HTU21DF\" />
+    <Folder Include="src\libraries\Arduino-EEPROMEx\" />
+    <Folder Include="src\libraries\Arduino-EEPROMEx\extras\" />
+    <Folder Include="src\libraries\Arduino-EEPROMEx\extras\Documentation\" />
+    <Folder Include="src\libraries\Arduino-EEPROMEx\extras\Documentation\html\" />
+    <Folder Include="src\libraries\LiquidCrystal\" />
+    <Folder Include="src\libraries\LiquidCrystal\src\" />
+    <Folder Include="src\libraries\Rotary" />
+    <Folder Include="src\libraries\RTClib\" />
+    <Folder Include="src\libraries\SD\" />
+    <Folder Include="src\libraries\SD\src\" />
+    <Folder Include="src\libraries\SD\src\utility\" />
+    <Folder Include="src\libraries\SPI\" />
+    <Folder Include="src\libraries\SPI\src\" />
+    <Folder Include="src\libraries\Wire\" />
+    <Folder Include="src\libraries\Wire\src\" />
+    <Folder Include="src\libraries\Wire\src\utility\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\Documentation.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\annotated.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\classes.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\class_e_e_p_r_o_m_class_ex-members.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\class_e_e_p_r_o_m_class_ex.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\class_e_e_p_r_o_m_var-members.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\class_e_e_p_r_o_m_var.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\files.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\functions.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\functions_func.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\index.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\_e_e_p_r_o_mex_8h_source.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\Arduino-EEPROMEx\extras\Documentation\html\_e_e_p_r_o_m_var_8h_source.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\libraries\Arduino-EEPROMEx\extras\Documentation\html\doxygen.css">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\libraries\Arduino-EEPROMEx\extras\Documentation\html\tabs.css">
+      <SubType>compile</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

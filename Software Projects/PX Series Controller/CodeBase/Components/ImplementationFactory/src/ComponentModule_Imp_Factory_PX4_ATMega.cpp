@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "..\..\include\ComponentModule_Imp_Factory\ComponentModuleImp_Factory_PX4_ATMega.h"
+#include "..\include\componentmoduleimp_factory_px4_atmega.h"
 
 #if defined(TARGET_PLAT_AVR)
 
@@ -38,24 +38,9 @@ ComponentModule_Imp_CombinedTempHumSensor * ComponentModuleImp_Factory_PX4_ATMeg
 	return new ComponentModule_Imp_CombinedTempHumSensor_HTU21DF();
 }
 
-ComponentModule_Imp_PowerRelay * ComponentModuleImp_Factory_PX4_ATMega::Make_PowerRelay_Pump()
+ComponentModule_Imp_PowerRelay * ComponentModuleImp_Factory_PX4_ATMega::Make_PowerRelay(const PersistentComponentAlias alias)
 {
-	return new ComponentModule_Imp_PowerRelay_ATMega(PowerRelay_Trigger_Pin_Pump);
-}
-
-ComponentModule_Imp_PowerRelay * ComponentModuleImp_Factory_PX4_ATMega::Make_PowerRelay_Fan()
-{
-	return new ComponentModule_Imp_PowerRelay_ATMega(PowerRelay_Trigger_Pin_Fan);
-}
-
-ComponentModule_Imp_PowerRelay * ComponentModuleImp_Factory_PX4_ATMega::Make_PowerRelay_LightA()
-{
-	return new ComponentModule_Imp_PowerRelay_ATMega(PowerRelay_Trigger_Pin_LightA);
-}
-
-ComponentModule_Imp_PowerRelay * ComponentModuleImp_Factory_PX4_ATMega::Make_PowerRelay_LightB()
-{
-	return new ComponentModule_Imp_PowerRelay_ATMega(PowerRelay_Trigger_Pin_LightB);
+	return new ComponentModule_Imp_PowerRelay_ATMega(getPinAssignmentForComponent(alias));
 }
 
 ComponentModule_Imp_RotaryEncoder * ComponentModuleImp_Factory_PX4_ATMega::Make_Control_RotaryEncoder()
@@ -71,6 +56,35 @@ ComponentModule_Imp_DataLogger * ComponentModuleImp_Factory_PX4_ATMega::Make_Dat
 ComponentModule_Imp_Buzzer * ComponentModuleImp_Factory_PX4_ATMega::Make_Buzzer()
 {
 	return new ComponentModule_Imp_Buzzer_ATMega();
+}
+
+ComponentModule_Imp_NvMemoryManager * ComponentModuleImp_Factory_PX4_ATMega::Make_NvMemoryManager()
+{
+	return new ComponentModule_Imp_NvMemoryManager_ATMega();
+}
+
+const int ComponentModuleImp_Factory_PX4_ATMega::getPinAssignmentForComponent(const PersistentComponentAlias alias)
+{
+	switch(alias) {
+		case PersistentComponentAlias::POWER_RELAY_CHANNEL_A :
+		return POWER_RELAY_PIN_1;
+		break;
+
+		case PersistentComponentAlias::POWER_RELAY_CHANNEL_B :
+		return POWER_RELAY_PIN_2;
+		break;
+
+		case PersistentComponentAlias::POWER_RELAY_CHANNEL_C :
+		return POWER_RELAY_PIN_3;
+		break;
+
+		case PersistentComponentAlias::POWER_RELAY_CHANNEL_D :
+		return POWER_RELAY_PIN_4;
+		break;
+
+		default :
+		return -1;
+	}
 }
 
 #endif

@@ -16,8 +16,8 @@
 */
 
 #pragma once
-#include "..\PreProcDirectives.h"
-#include "..\ComponentModule_imp\ComponentModule_Imp_DataLogger.h"
+#include "PX4_Config.h"
+#include "ComponentModule_Imp_DataLogger.h"
 
 #if defined(TARGET_PLAT_AVR)
 

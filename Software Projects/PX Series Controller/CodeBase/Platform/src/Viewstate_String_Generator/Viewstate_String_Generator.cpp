@@ -158,9 +158,9 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 		Viewstate_String_Generator::componentStateOffText,
 		Viewstate_String_Generator::componentStateAutoText,
 		Viewstate_String_Generator::componentStateOverrideText,
-		Viewstate_String_Generator::manualOverrideViewTextTitle,
-		Viewstate_String_Generator::componentFanText,
+		Viewstate_String_Generator::manualOverrideViewTextTitle,		
 		//9
+		Viewstate_String_Generator::componentFanText,
 		Viewstate_String_Generator::componentPumpText,
 		Viewstate_String_Generator::componentLightText,
 		Viewstate_String_Generator::componentShortNameOutletText,
@@ -170,21 +170,19 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 		Viewstate_String_Generator::componentShortNamePumpText,
 		Viewstate_String_Generator::componentShortNameGroupA,
 		Viewstate_String_Generator::componentShortNameGroupB,
-		Viewstate_String_Generator::componentShortNameGroupC,
 		//19
+		Viewstate_String_Generator::componentShortNameGroupC,		
 		Viewstate_String_Generator::componentShortNameGroupD,
 		Viewstate_String_Generator::componentTypeLabel,
 		Viewstate_String_Generator::componentGroupLabel,
-
 		Viewstate_String_Generator::powerRelaySettingsViewTextTitle,
-
 		Viewstate_String_Generator::defaultTimeText,
 		Viewstate_String_Generator::defaultRuleLineText,
 		Viewstate_String_Generator::defaultTlmvTextSettings,
 		Viewstate_String_Generator::taskAliasDisplayText_NotSet,
 		Viewstate_String_Generator::taskAliasDisplayText_EnablePump,
-		Viewstate_String_Generator::taskAliasDisplayText_DisablePump,
 		//29
+		Viewstate_String_Generator::taskAliasDisplayText_DisablePump,
 		Viewstate_String_Generator::taskAliasDisplayText_EnableFans,
 		Viewstate_String_Generator::taskAliasDisplayText_DisableFans,
 		Viewstate_String_Generator::taskAliasDisplayText_EnableLights,
@@ -194,6 +192,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 		Viewstate_String_Generator::InputPromptSetTaskAxtionText,
 		Viewstate_String_Generator::DefaultBackText,
 		Viewstate_String_Generator::DefaultYesText,
+		//39
 		Viewstate_String_Generator::DefaultNoText,
 		Viewstate_String_Generator::DefaultSaveText,
 		Viewstate_String_Generator::DefaultEditText,
@@ -204,6 +203,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 		Viewstate_String_Generator::EnvSettingsTlmvText_Title,
 		Viewstate_String_Generator::EnvSettingsLightCycleText_SetRise,
 		Viewstate_String_Generator::EnvSettingsLightCycleText_SetSunset,
+		//49
 		Viewstate_String_Generator::EnvSettingsLightCycleText_SetLightCycleMode,
 		Viewstate_String_Generator::EnvSettingsAlarmThresholdText_OverTemp,
 		Viewstate_String_Generator::EnvSettingsAlarmThresholdText_OverRH,
@@ -214,6 +214,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 		Viewstate_String_Generator::EnvSettingsFanCircCycleText_Mode,
 		Viewstate_String_Generator::EnvSettingsFanExCycleText_Day,
 		Viewstate_String_Generator::EnvSettingsFanExCycleText_Night,
+		//59
 		Viewstate_String_Generator::EnvSettingsFanExCycleText_Duration,
 		Viewstate_String_Generator::EnvSettingsFanExCycleText_Mode,
 		Viewstate_String_Generator::ScheduledTaskConfig_BulkDeletePromptText,
@@ -224,6 +225,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 		Viewstate_String_Generator::ScheduledTaskConfig_CreateText_TaskAction,
 		Viewstate_String_Generator::ScheduledTaskConfig_CreateText_TaskTime,
 		Viewstate_String_Generator::ScheduledTaskConfig_CreateSelectText_ByRelay,
+		//69
 		Viewstate_String_Generator::ScheduledTaskConfig_CreateSelectText_ByGroup,
 		Viewstate_String_Generator::ScheduledTaskConfig_DeleteText_Conf,
 		Viewstate_String_Generator::ScheduledTaskConfig_MenuText_Set,
@@ -234,6 +236,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 		Viewstate_String_Generator::EventText_SystemInitComplete,
 		Viewstate_String_Generator::EventText_SystemStartupComplete,
 		Viewstate_String_Generator::EventText_PwrRelay_FanOn,
+		//79
 		Viewstate_String_Generator::EventText_PwrRelay_FanOff,
 		Viewstate_String_Generator::EventText_PwrRelay_PumpOn,
 		Viewstate_String_Generator::EventText_PwrRelay_PumpOff,
@@ -244,6 +247,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 		Viewstate_String_Generator::EventText_SystemStatus_Error,
 		Viewstate_String_Generator::EventText_SystemStatus_Alert,
 		Viewstate_String_Generator::EventText_SystemStatus_Init,
+		//89
 		Viewstate_String_Generator::EventText_Alarm_OverTemp,
 		Viewstate_String_Generator::EventText_Alarm_OverRH,
 		Viewstate_String_Generator::EventText_TaskPoolQueuedCount,
@@ -277,29 +281,29 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 			componentStateAutoText,
 			componentStateOverrideText,
 			manualOverrideViewTextTitle,
+			//9
 			componentFanText,
 			componentPumpText,
 			componentLightText,
-
 			componentShortNameOutletText,
 			componentShortNameCirculationFanText,
 			componentShortNameExhaustFanText,
 			componentShortNameLightText,
 			componentShortNamePumpText,
-			componentShortNameGroupA;
-			componentShortNameGroupB;
-			componentShortNameGroupC;
-			componentShortNameGroupD;
-			componentTypeLabel;
-			componentGroupLabel;
-
+			componentShortNameGroupA,
+			componentShortNameGroupB,
+			//19
+			componentShortNameGroupC,
+			componentShortNameGroupD,
+			componentTypeLabel,
+			componentGroupLabel,
 			powerRelaySettingsViewTextTitle,
-
 			defaultTimeText,
 			defaultRuleLineText,
 			defaultTlmvTextSettings,
 			taskAliasDisplayText_NotSet,
 			taskAliasDisplayText_EnablePump,
+			//29
 			taskAliasDisplayText_DisablePump,
 			taskAliasDisplayText_EnableFans,
 			taskAliasDisplayText_DisableFans,
@@ -310,6 +314,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 			InputPromptSetTaskAxtionText,
 			DefaultBackText,
 			DefaultYesText,
+			//39
 			DefaultNoText,
 			DefaultSaveText,
 			DefaultEditText,
@@ -320,6 +325,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 			EnvSettingsTlmvText_Title,
 			EnvSettingsLightCycleText_SetRise,
 			EnvSettingsLightCycleText_SetSunset,
+			//49
 			EnvSettingsLightCycleText_SetLightCycleMode,
 			EnvSettingsAlarmThresholdText_OverTemp,
 			EnvSettingsAlarmThresholdText_OverRH,
@@ -330,6 +336,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 			EnvSettingsFanCircCycleText_Mode,
 			EnvSettingsFanExCycleText_Day,
 			EnvSettingsFanExCycleText_Night,
+			//59
 			EnvSettingsFanExCycleText_Duration,
 			EnvSettingsFanExCycleText_Mode,
 			ScheduledTaskConfig_BulkDeletePromptText,
@@ -340,6 +347,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 			ScheduledTaskConfig_CreateText_TaskAction,
 			ScheduledTaskConfig_CreateText_TaskTime,
 			ScheduledTaskConfig_CreateSelectText_ByRelay,
+			//69
 			ScheduledTaskConfig_CreateSelectText_ByGroup,
 			ScheduledTaskConfig_DeleteText_Conf,
 			ScheduledTaskConfig_MenuText_Set,
@@ -350,6 +358,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 			EventText_SystemInitComplete,
 			EventText_SystemStartupComplete,
 			EventText_PwrRelay_FanOn,
+			//79
 			EventText_PwrRelay_FanOff,
 			EventText_PwrRelay_PumpOn,
 			EventText_PwrRelay_PumpOff,
@@ -360,6 +369,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 			EventText_SystemStatus_Error,
 			EventText_SystemStatus_Alert,
 			EventText_SystemStatus_Init,
+			//89
 			EventText_Alarm_OverTemp,
 			EventText_Alarm_OverRH,
 			EventText_TaskPoolQueuedCount,

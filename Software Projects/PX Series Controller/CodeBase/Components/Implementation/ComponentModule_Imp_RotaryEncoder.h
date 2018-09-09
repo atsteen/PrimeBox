@@ -20,8 +20,6 @@
 #include "..\..\Platform\include\SharedStructure\SharedInterface\IPolledInterfaceControl.h"
 #include "..\Implementation\ComponentModule_Imp.h"
 
-extern volatile TaskAlias FlaggedTask;
-
 class ComponentModule_Imp_RotaryEncoder
 	: public ComponentModule_Imp
 {

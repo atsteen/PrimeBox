@@ -15,13 +15,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "..\..\include\ComponentModule_Imp\ComponentModule_Imp_ASCIIDisplay_ATMega.h"
+#include "..\include\ComponentModule_Imp_ASCIIDisplay_PCF8574T_i2c_ATMega.h"
 
 #if defined(TARGET_PLAT_AVR)
 
 #include <string.h>
-#include "..\include\Viewstate_String_Generator\Viewstate_String_Generator.h"
-
+#include "..\..\..\..\..\Platform\include\Viewstate_String_Generator\Viewstate_String_Generator.h"
 
 ComponentModule_Imp_ASCIIDisplay_ATMega::ComponentModule_Imp_ASCIIDisplay_ATMega()
 {

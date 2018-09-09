@@ -16,7 +16,7 @@
 */
 
 #pragma once
-#include "..\..\include\ComponentModule_Imp\ComponentModule_Imp_Buzzer_ATMega.h"
+#include "..\include\ComponentModule_Imp_Buzzer_ATMega.h"
 
 #if defined (TARGET_PLAT_AVR)
 

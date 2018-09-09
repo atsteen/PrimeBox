@@ -188,6 +188,7 @@
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TaskItem.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TaskItemPool.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\TimeSignature.h" />
+    <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\ToneItem.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_CircularList.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_DynamicDataProxy.h" />
     <ClInclude Include="..\..\..\..\CodeBase\Platform\include\SharedStructure\T_List.h" />
