@@ -50,10 +50,10 @@ public:
 	virtual void SetRelayComponentAssociationByIndex(const int, const ComponentAssociation * const) override;
 
 private:
-	ComponentModuleImp_Factory_PX4 * _componentImpFactory;
-	IPersistentDataCoordinator * _persistentDataCoordinator;
-	ComponentModule_PowerRelay_Standard *_powerRelays[POWER_RELAY_COUNT];
-	IRtcLogger * _logger;
+	ComponentModuleImp_Factory_PX4 * _componentImpFactory = {};
+	IPersistentDataCoordinator * _persistentDataCoordinator = {};
+	ComponentModule_PowerRelay_Standard *_powerRelays[POWER_RELAY_COUNT] = {};
+	IRtcLogger * _logger = {};
 
 	void _LogRelayStateChange(int index);
 };

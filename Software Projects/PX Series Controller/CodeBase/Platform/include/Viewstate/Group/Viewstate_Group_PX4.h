@@ -44,14 +44,13 @@ public:
 	virtual ITextViewstate * GetViewstateByAlias(const ViewstateAlias) override;
 
 private:
-	IModelSystemData * _systemData;
-	IModelTaskData * _taskData;
-	IModelEnvLightData * _lightData;
-	IModelEnvAirData * _airData;
-	IAirSensor * _airSensor;
-	ITextViewstate * _requestedViewstate;
-	IModelViewstateData * _viewStateData;
-	IPowerRelayArray * _relayArray;
-
-	EventLog_Item_Collection * _eventCollection;
+	IModelSystemData * _systemData = {};
+	IModelTaskData * _taskData = {};
+	IModelEnvLightData * _lightData = {};
+	IModelEnvAirData * _airData = {};
+	IAirSensor * _airSensor = {};
+	ITextViewstate * _requestedViewstate = {};
+	IModelViewstateData * _viewStateData = {};
+	IPowerRelayArray * _relayArray = {};
+	EventLog_Item_Collection * _eventCollection = {};
 };

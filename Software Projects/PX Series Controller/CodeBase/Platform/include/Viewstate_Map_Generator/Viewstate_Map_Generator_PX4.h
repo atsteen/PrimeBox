@@ -28,5 +28,5 @@ public:
 	virtual ISelectableNavigationMap * const GenerateMap(const ViewstateAlias alias) override;
 	
 private:
-	ISelectableNavigationMap * _cachedMap;
+	ISelectableNavigationMap * _cachedMap = {};
 };

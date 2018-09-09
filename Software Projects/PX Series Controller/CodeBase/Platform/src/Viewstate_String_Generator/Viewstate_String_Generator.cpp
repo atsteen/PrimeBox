@@ -266,7 +266,7 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 ///////////
 #else //AVR
 
-	char Viewstate_String_Generator::flashStringBuffer[21] = "\0";
+	char Viewstate_String_Generator::flashStringBuffer[128] = "\0";
 
 	const char* const Viewstate_String_Generator::strTable[] = {
 		
