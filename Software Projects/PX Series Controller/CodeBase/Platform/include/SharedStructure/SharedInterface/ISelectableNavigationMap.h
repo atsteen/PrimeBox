@@ -23,7 +23,7 @@ class ISelectableNavigationMap
 {
 public:
 	ISelectableNavigationMap() {};
-	~ISelectableNavigationMap();
+	virtual ~ISelectableNavigationMap() = 0;
 
 	virtual const ViewstateAlias ViewstateAssociation() = 0;
 	virtual const NavigationMapSelection * CurrentSelection() const = 0; //returns the current viewstate selections

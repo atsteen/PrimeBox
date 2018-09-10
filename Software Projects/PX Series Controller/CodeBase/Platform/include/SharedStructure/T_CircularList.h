@@ -20,9 +20,9 @@
 template <class T>
 struct T_CircularListNode
 {
-	const T * const element;
-	T_CircularListNode * next;
-	T_CircularListNode * last;
+	const T * const element = {};
+	T_CircularListNode * next = {};
+	T_CircularListNode * last = {};
 	T_CircularListNode(T * e) : element(e), next(nullptr) {}
 	~T_CircularListNode() { delete element; }
 };
@@ -41,7 +41,7 @@ public:
 	void addBack(T& e); // add after cursor
 	void remove(); // remove node after cursor
 private:
-	T_CircularListNode<T> * _cursor; // the cursor
+	T_CircularListNode<T> * _cursor = {}; // the cursor
 };
 
 template <class T>
@@ -49,7 +49,7 @@ inline void T_CircularList<T>::pushFront(T& e)
 {
 	T_CircularListNode<T> * v = new T_CircularListNode<T>(&e);
 
-	if (_cursor == nullptr)
+	if (!_cursor)
 	{
 		v->next = v;
 		v->last = v;
@@ -57,10 +57,11 @@ inline void T_CircularList<T>::pushFront(T& e)
 	}
 	else
 	{
-		v->next = _cursor->next;
-		v->last = _cursor;
-		_cursor->next->last = v;
-		_cursor->next = v;
+		v->next = _cursor;
+		v->last = _cursor->last;
+		_cursor->last = v;
+
+		_cursor = v;
 	}
 }
 
@@ -69,7 +70,7 @@ inline void T_CircularList<T>::addBack(T& e)
 {
 	T_CircularListNode<T> * v = new T_CircularListNode<T>(&e);
 
-	if (_cursor == nullptr)
+	if (!_cursor)
 	{
 		v->next = v;
 		v->last = v;
@@ -87,15 +88,17 @@ inline void T_CircularList<T>::addBack(T& e)
 template<class T>
 inline void T_CircularList<T>::remove()
 {
-	T_CircularListNode<T> * old = _cursor->next;
-	if (old == _cursor)
-	{
-		_cursor = nullptr;
-	}
+	if(_cursor == 0){ return; }
+
+	T_CircularListNode<T> * old = _cursor;	
+
+	if(_cursor == _cursor->next){ _cursor = 0; }
 	else
 	{
-		_cursor->next = old->next;
-		_cursor->next->last = _cursor;
-		delete old;
+		_cursor = old->next;
+		_cursor->last = old->last;
+		old->last->next = _cursor;
 	}
+	
+	delete old;
 }

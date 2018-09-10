@@ -617,7 +617,8 @@ ADDITIONAL_DEPENDENCIES:=
 
 OUTPUT_FILE_DEP:= ./makedep.mk
 
-LIB_DEP+= 
+LIB_DEP+=  \
+C:/GitHub/PrimeBox/Software\ Projects/PX\ Series\ Controller/IDE/AtmelStudio/PX_Series_Controller/ArduinoCore/Debug/libArduinoCore.a
 
 LINKER_SCRIPT_DEP+= 
 

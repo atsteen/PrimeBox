@@ -38,7 +38,7 @@ public:
 	
 
 private:
-	IModelInterfaceData * _interfaceData;
-	IRtcLogger * _rtcLogger;
+	IModelInterfaceData * _interfaceData = {};
+	IRtcLogger * _rtcLogger = {};
 	T_List<IPolledInterfaceControl &> _polledInterfaces;
 };

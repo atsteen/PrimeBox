@@ -23,7 +23,7 @@ class SelectableNavigationMap : public ISelectableNavigationMap
 {
 public:
 	SelectableNavigationMap(ViewstateAlias alias) : _alias(alias){};
-	~SelectableNavigationMap() {};
+	virtual ~SelectableNavigationMap() override {}
 
 	// Inherited via ISelectableNavigationMap
 	virtual const ViewstateAlias ViewstateAssociation() override;
@@ -37,7 +37,7 @@ public:
 
 private:
 	const ViewstateAlias _alias;
-	const T_CircularListNode<NavigationMapSelection> * _currentlySelected = nullptr;
+	const T_CircularListNode<NavigationMapSelection> * _currentlySelected = {};
 	int _dynamicElementSelectionIndex = 0;
 	T_CircularList<NavigationMapSelection> _selectableElements;
 

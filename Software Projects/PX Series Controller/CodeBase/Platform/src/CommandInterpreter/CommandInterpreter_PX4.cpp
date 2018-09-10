@@ -40,7 +40,7 @@ void CommandInterpreter_PX4::InvokeTaskRequest(const TaskAlias ta) const
 	}
 
 	//todo... remove!
-	_rtcLogger->LogMessage("CommandInterpreter is queueing a task...");
+	//_rtcLogger->LogMessage("CommandInterpreter is queueing a task...");
 
 	TaskItemPool::GetInstance().QueueTaskItem(taskItem);
 }
