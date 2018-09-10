@@ -76,7 +76,7 @@ protected:
 	virtual void UpdatePersistentData(IPersistentDataCoordinator * persistentDataAgent) override;	
 
 private:
-	IAirSensor * _airSensor;
+	IAirSensor * _airSensor = {};
 
 	int _exhaustFanDutyCycleDuration = DEFAULT_EXHAUST_FAN_DUTY_CYCLE_DURATION;
 	int _exhaustFanDutyCycleDay = DEFAULT_EXHAUST_FAN_DUTY_CYCLE_DAY;

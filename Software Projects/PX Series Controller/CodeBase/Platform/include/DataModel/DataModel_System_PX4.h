@@ -51,5 +51,5 @@ private:
 	SystemSKU _sysSKU = { '0', '0', '3' };
 	bool _logAlarmDefaultState = true;
 	ViewstateStringAlias _systemMode = ViewstateStringAlias::EVENT_TEXT_SYSTEMSTATUS_INIT;
-	IRtcLogger * _rtcLogger;
+	IRtcLogger * _rtcLogger = {};
 };

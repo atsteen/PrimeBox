@@ -4,14 +4,23 @@
 
 #include "Controller_PX4.h"
 #include "PX4_Config.h"
-#include "MemoryProbe.h"
+
+#if defined(TARGET_PLAT_AVR)
+#include <Arduino.h>
+#endif
 
 void setup() {
-  // put your setup code here, to run once:
+	// put your setup code here, to run once:
+
+	//todo... remove at initial code rev
+	#if defined(TARGET_PLAT_AVR)
+	Serial.begin(9600);
+	while (!Serial) {}
+	#endif
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+	// put your main code here, to run repeatedly:
 	Controller_PX4 controller;
 
 	controller.Initialize();

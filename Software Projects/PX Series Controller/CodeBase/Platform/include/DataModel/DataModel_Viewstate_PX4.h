@@ -44,11 +44,11 @@ public:
 private:
 	bool _viewstateIsModal = false;
 	TimeSignature _lastStatusPublish = { 2000,1,1 };
-	ISelectableNavigationMap * _viewstateMap;
-	IDynamicData * _dynamicData;
+	ISelectableNavigationMap * _viewstateMap = {};
+	IDynamicData * _dynamicData = {};
 
 	//deprecate once viewstates are refactored using dynamic data proxy
 	int _dynamicViewstateSelectedElementIndex = 0; 
 	ViewstateStringAlias _dynamicViewstateTitleAlias;
-	const char * _dynamicViewstateSuffixSymbol = nullptr;
+	const char * _dynamicViewstateSuffixSymbol = {};
 };
