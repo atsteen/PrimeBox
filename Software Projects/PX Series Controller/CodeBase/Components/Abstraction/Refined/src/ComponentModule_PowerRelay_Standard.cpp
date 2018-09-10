@@ -121,6 +121,11 @@ const ComponentPowerState ComponentModule_PowerRelay_Standard::GetPowerState()
 void ComponentModule_PowerRelay_Standard::RestorePersistentData(IPersistentDataCoordinator * persistentDataCoordinator)
 {
 	persistentDataCoordinator->ReadPersistentItem(&stateData, persistentDataAlias);
+
+	if (stateData.powerState == ComponentPowerState::ENABLED | stateData.powerState == ComponentPowerState::OVERRIDE_ENABLED)
+	{
+		this->_imp->SetState(true);
+	}
 }
 
 void ComponentModule_PowerRelay_Standard::UpdatePersistentData(IPersistentDataCoordinator * persistentDataCoordinator)
