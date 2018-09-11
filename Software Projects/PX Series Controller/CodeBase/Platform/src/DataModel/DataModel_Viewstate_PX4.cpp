@@ -25,7 +25,7 @@ const TimeSignature * DataModel_Viewstate_PX4::LastViewstatePublish()
 //TODO - review all references, ensure status publish isnt confused with viewstate publish in callers...
 void DataModel_Viewstate_PX4::RegisterViewstatePublish(TimeSignature ts)
 {
-	_lastStatusPublish.SetSignature(ts.year(), ts.month(), ts.day(), ts.hour(), ts.minute(), ts.second());
+	_lastStatusPublish.SetSignature(&ts);
 }
 
 const int DataModel_Viewstate_PX4::GetViewstateSelectableElementIndex()

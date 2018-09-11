@@ -233,12 +233,7 @@ void TimeSignature::SetSignature(uint16_t year, uint8_t month, uint8_t day, uint
 
 void TimeSignature::SetSignature(const TimeSignature * const newTime)
 {
-	yOff = newTime->year();
-	m = newTime->month();
-	d = newTime->day();
-	hh = newTime->hour();
-	mm = newTime->minute();
-	ss = newTime->second();
+	this->SetSignature(newTime->year(), newTime->month(), newTime->day(), newTime->hour(), newTime->minute(), newTime->second());
 }
 
 void TimeSignature::AdjustHH(int HH)

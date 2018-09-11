@@ -194,6 +194,4 @@ void Controller_PX4::LogControllerStatus()
 	#if defined(TARGET_PLAT_AVR)
 	_rtcLogger->LogMessage(EVENT_TEXT_FREE_MEMORY_AVAILABLE, freeMemory());
 	#endif
-
-	dataModel_Viewstate->RegisterViewstatePublish(_rtcLogger->CurrentTime());
 }
