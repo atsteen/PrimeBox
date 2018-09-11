@@ -98,7 +98,12 @@ bool ComponentModule_Imp_NvMemoryManager_ATMega::ReadPersistentItem(ScheduledTas
 	}
 	
 	int address = _persistentDataMap.GetAddress(taskDetails, alias);
-	EEPROM.readBlock(address, taskDetails);
+
+	Serial.print(F("The address for taskDetail array is: "));
+	Serial.println(address);
+	delay(1000);
+
+	EEPROM.readBlock(address, taskDetails, SCHEDULED_TASK_DETAIL_COUNT);
 	return true;
 }
 
@@ -208,7 +213,10 @@ bool ComponentModule_Imp_NvMemoryManager_ATMega::WritePersistentItem(const Power
 bool ComponentModule_Imp_NvMemoryManager_ATMega::WritePersistentItem(const ScheduledTaskDetail taskDetails[SCHEDULED_TASK_DETAIL_COUNT], const PersistentDataAlias alias)
 {
 	int address = _persistentDataMap.GetAddress(taskDetails, alias);
-	return EEPROM.updateBlock(address, taskDetails);
+	return EEPROM.updateBlock(address, taskDetails, SCHEDULED_TASK_DETAIL_COUNT);
+
+
+
 	//Serial.print(F("Writing ScheduledTaskDetailPool item to EEPROM address "));
 	//Serial.println(address);
 //
