@@ -57,6 +57,7 @@ public:
 
 protected:	
 	long lastRelayUpdate = 0;
+	long lastStatusLogUpdate = 0;
 
 	void LogControllerStatus();
 	void UpdateState();

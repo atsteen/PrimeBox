@@ -164,9 +164,10 @@ void Controller_PX4::UpdateState()
 	}
 
 	// STATUS LOGGING REFRESH
-	if(_rtcLogger->CurrentTime().secondstime() >= (dataModel_Viewstate->LastViewstatePublish()->secondstime() + CONTROLLER_STATUS_OUTPUT_INTERVAL_SEC))
+	if(_rtcLogger->CurrentTime().secondstime() >= (lastStatusLogUpdate + CONTROLLER_STATUS_OUTPUT_INTERVAL_SEC))
 	{
-		LogControllerStatus();			
+		LogControllerStatus();
+		lastStatusLogUpdate = _rtcLogger->CurrentTime().secondstime();
 	}
 }
 
