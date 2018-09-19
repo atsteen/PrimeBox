@@ -1,0 +1,57 @@
+MCU Components
+--------------
+ATMega2560 R3 board				1
+20x4 LCD (parallel)				1
+RTC I2C (DS3231)				1
+CR2032 3v battery				1
+HTU21D I2C Temp/Hum sensor			1
+Mechanical Relay Unit (4 circuit)		1
+	
+PCB Components
+--------------
+PCB (.060, double sided HASL Lead-Free, 1oz) 	1
+2.54mm Socket Header (40pos strip)		1
+2.54mm Straight Pin Header (40pos strip)	1
+3.5mm screw terminal block (2p)			2
+5mm screw terminal block (2p)			1
+--Buzzer circuit	
+Magnetic buzzer	(5v)				1
+180 Ohm resistor (6.3mm)			1
+--Encoder Circuit	
+Bourns Rotary encoder (PEC11R-4320F-S0012)	1
+M7x.75 nut					1
+10K pF Capacitors (.01uF)			2
+10K ohm Resistors (6.3mm)			4
+--LCD Circuit
+10K trim pot (3386-P-1-103T, EY5 10k)		1
+BJT NPN Transistor (2N2222A)			1
+4.7K ohm Resistor (6.3mm)			1
+	
+Mounting and shell	
+------------------
+6mm Dshaft knob (30mm)				1
+Enclosure face (.5" Marine HDPE)		14"x7.5"x.5"
+Enclosure shroud (.093" ABS)			12"x24"
+Panel Mount Receptacle Qualtek 738W-X2/03	4
+Component mount screws (m3x8mm)			10
+PCB standoffs, brass (m3x8mm)			11
+Power cable					1
+PG9 Cable Gland +  Strain relief (53015810)	1
+PG7 Cable Gland					2
+10A Thermal Circuit Breaker (W28-XQ1A-10)	2
+MeanWell IRM-05-5 AC/DC power supply		1
+
+Wire harness
+------------
+sheilded 2pair twisted, 22guage (ft)		3
+18guage stranded primary wire WHITE (ft)	2.5
+18guage stranded primary wire BLACK (ft)	5
+18guage stranded primary wire GREEN (ft)	2
+18guage female blade connectors			12
+14guage female blade connectors			2
+Closed end crimp caps				3
+	
+Optional Components
+-------------------	
+sd card reader module (ICSP)			1
+sd card (4GB)					1
