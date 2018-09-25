@@ -51,9 +51,10 @@ private:
 inline bool PX4_StateRefresh_FansCirculation::HandleTask(TaskItem * _taskItem)
 {
 	if (!_CanHandleTask(_taskItem)) { return false; }
+	if (!_environmentData->GetCirculationFanCycleDefaultState()) { return true; }
 
 	TimeSignature const * timeNow = &_rtcLogger->CurrentTime();
-	int currentDutyCycleDepthMins = MINUTES_IN_DAY % *_environmentData->GetCirculationFanDutyCycleDuration();
+	int currentDutyCycleDepthMins = (timeNow->secondsInDay() / 60) % *_environmentData->GetCirculationFanDutyCycleDuration();
 	int activeDutyCycleDepthMins = 0;
 
 	if (timeNow->secondsInDay() > _lightData->GetDefaultSunriseTime()->secondsInDay() && timeNow->secondsInDay() < _lightData->GetDefaultSunsetTime()->secondsInDay())

@@ -46,6 +46,7 @@ private:
 inline bool PX4_StateRefresh_Lights::HandleTask(TaskItem * _taskItem)
 {
 	if (!_CanHandleTask(_taskItem)) { return false; }
+	if (!_lightData->GetLightCycleDefaultState()) { return true; }
 
 	TimeSignature const * timeNow = &_rtcLogger->CurrentTime();
 
