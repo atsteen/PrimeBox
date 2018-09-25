@@ -102,3 +102,9 @@
 #define POWER_RELAY_PIN_2 5
 #define POWER_RELAY_PIN_3 6
 #define POWER_RELAY_PIN_4 7
+
+//Encoder configuration (AVR imp only)
+#define ENCODER_D1 2
+#define ENCODER_D2 3
+#define ENCODER_SW 19
+#define ENCODER_SW_MIN_DEBOUNCE_DELAY_MS 25 // only required in PCB V1.32

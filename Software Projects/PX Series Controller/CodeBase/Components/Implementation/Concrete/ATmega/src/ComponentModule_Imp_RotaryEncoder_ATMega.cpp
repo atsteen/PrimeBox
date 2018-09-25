@@ -40,16 +40,15 @@ void isr_rotate()
 
 void isr_select()
 {
-	btnReleased = !btnReleased; //encoder select triggers twice, once down, then up - only count up trigger
-	if(btnReleased){ FlaggedTask = TASKALIAS_NAVIGATION_MENU_SELECT; }	
+	FlaggedTask = TASKALIAS_NAVIGATION_MENU_SELECT;
 }
 
 ComponentModule_Imp_RotaryEncoder_ATMega::ComponentModule_Imp_RotaryEncoder_ATMega()
 {
-	pinMode(ENCODER_SW, INPUT);
-	digitalWrite (ENCODER_SW, HIGH);
+	pinMode(ENCODER_SW, INPUT_PULLUP);
+	digitalWrite(ENCODER_SW, HIGH);
 
-	attachInterrupt(digitalPinToInterrupt(ENCODER_SW), isr_select, CHANGE);
+	attachInterrupt(digitalPinToInterrupt(ENCODER_SW), isr_select, RISING);
 	attachInterrupt(digitalPinToInterrupt(ENCODER_D1), isr_rotate, CHANGE);
 	attachInterrupt(digitalPinToInterrupt(ENCODER_D2), isr_rotate, CHANGE);
 }
@@ -63,9 +62,24 @@ bool ComponentModule_Imp_RotaryEncoder_ATMega::DoSelfDiagnostic_Imp()
 
 TaskAlias ComponentModule_Imp_RotaryEncoder_ATMega::GetFlaggedTask()
 {
-	const TaskAlias currentFlaggedTask = FlaggedTask;
-	FlaggedTask = TASKALIAS_NOT_SET; // Clear flagged task
-	return currentFlaggedTask;
+	if(FlaggedTask != TASKALIAS_NOT_SET)
+	{
+		const TaskAlias currentFlaggedTask = FlaggedTask;
+		FlaggedTask = TASKALIAS_NOT_SET; // Clear flagged task		
+
+		// the following statement is a software solution for a hardware bug
+		// PCB design flaw (v1.32) results in improper hardware debouncing on the encoder switch
+		// todo... migrate this next block once PCB is fixed
+		if(currentFlaggedTask == TASKALIAS_NAVIGATION_MENU_SELECT)
+		{
+			delay(ENCODER_SW_MIN_DEBOUNCE_DELAY_MS);
+			if(digitalRead(ENCODER_SW) == LOW){ return TASKALIAS_NOT_SET; }			
+		}
+		
+		return currentFlaggedTask;
+	}
+
+	return TASKALIAS_NOT_SET;
 }
 
 #endif

@@ -25,12 +25,6 @@
 #include <Wire.h>
 #include <Arduino.h>
 
-#define ENCODER_D1 2
-#define ENCODER_D2 3
-#define ENCODER_SW 19
-
-
-
 class ComponentModule_Imp_RotaryEncoder_ATMega :
 	public ComponentModule_Imp_RotaryEncoder
 {
