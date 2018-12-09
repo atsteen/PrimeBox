@@ -166,7 +166,14 @@ void Controller_PX4::UpdateState()
 	// STATUS LOGGING REFRESH
 	if(_rtcLogger->CurrentTime().secondstime() >= (lastStatusLogUpdate + CONTROLLER_STATUS_OUTPUT_INTERVAL_SEC))
 	{
+		#if defined(ENABLE_VERBOSE_LOGGING)
 		LogControllerStatus();
+		#endif
+
+		#if defined(ENABLE_ENVIORNMENT_LOGGING)
+		LogEnvironmentData();
+		#endif
+
 		lastStatusLogUpdate = _rtcLogger->CurrentTime().secondstime();
 	}
 }
@@ -195,4 +202,10 @@ void Controller_PX4::LogControllerStatus()
 	#if defined(TARGET_PLAT_AVR)
 	_rtcLogger->LogMessage(EVENT_TEXT_FREE_MEMORY_AVAILABLE, freeMemory());
 	#endif
+}
+
+void Controller_PX4::LogEnvironmentData()
+{
+	_rtcLogger->LogMessage(EVENT_TEXT_TEMPERATURE_STATE, (int)_airSensor->CurrentTemperatureFahrenheit());
+	_rtcLogger->LogMessage(EVENT_TEXT_HUMIDITY_STATE, (int)_airSensor->CurrentRelativeHumidity());
 }

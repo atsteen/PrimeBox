@@ -60,6 +60,7 @@ protected:
 	long lastStatusLogUpdate = 0;
 
 	void LogControllerStatus();
+	void LogEnvironmentData();
 	void UpdateState();
 	void ManageTasks();
 	void ProcessTasks();

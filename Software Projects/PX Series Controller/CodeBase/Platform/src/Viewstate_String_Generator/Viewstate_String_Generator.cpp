@@ -143,6 +143,8 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 	const char Viewstate_String_Generator::EventText_LastUserInputTime[] = "Last user input timestamp:";
 	const char Viewstate_String_Generator::EventText_FreeMemoryAvailable[] = "Available system memory:";
 	const char Viewstate_String_Generator::EventText_TaskPoolFull[] = "Warning - task pool is full!";
+	const char Viewstate_String_Generator::EventText_TemperatureState[] = "Current Temperature:";
+	const char Viewstate_String_Generator::EventText_HumidityState[] = "Current Humidity:";
 	const char Viewstate_String_Generator::MessageText_TaskRetryFailure[] = "Warning - unhandled task execution failure, exceed max retry. ID:";
 
 
@@ -255,6 +257,8 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 		Viewstate_String_Generator::EventText_LastUserInputTime,
 		Viewstate_String_Generator::EventText_FreeMemoryAvailable,
 		Viewstate_String_Generator::EventText_TaskPoolFull,
+		Viewstate_String_Generator::EventText_TemperatureState,
+		Viewstate_String_Generator::EventText_HumidityState,
 		Viewstate_String_Generator::MessageText_TaskRetryFailure
 	};
 
@@ -377,7 +381,10 @@ const char Viewstate_String_Generator::colonSymbol[] = { ':', '\0' };
 			EventText_LastUserInputTime,
 			EventText_FreeMemoryAvailable,
 			EventText_TaskPoolFull,
+			EventText_TemperatureState,
+			EventText_HumidityState,
 			MessageText_TaskRetryFailure
+			//99
 		};
 
 	const char * Viewstate_String_Generator::GetViewstateString(const ViewstateStringAlias fsaAVR)

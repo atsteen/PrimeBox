@@ -159,6 +159,8 @@ enum ViewstateStringAlias {
 	EVENT_TEXT_LAST_USER_INPUT_TIME,
 	EVENT_TEXT_FREE_MEMORY_AVAILABLE,
 	EVENT_TEXT_TASKPOOL_FULL,
+	EVENT_TEXT_TEMPERATURE_STATE,
+	EVENT_TEXT_HUMIDITY_STATE,
 
 	//Message strings for logging
 	MESSAGE_TEXT_TASK_RETRY_FAILURE
@@ -270,6 +272,8 @@ enum ViewstateStringAlias {
 	const char EventText_LastUserInputTime[] PROGMEM = "Last user input timestamp:";
 	const char EventText_FreeMemoryAvailable[] PROGMEM = "Available system memory:";
 	const char EventText_TaskPoolFull[] PROGMEM = "Warning - task pool is full!";
+	const char EventText_TemperatureState[] PROGMEM = "Current Temperature:";
+	const char EventText_HumidityState[] PROGMEM = "Current Humidity:";
 	const char MessageText_TaskRetryFailure[] PROGMEM = "Warning - unhandled task execution failure, exceed max retry. ID:";
 
 	//const char EventText_[] PROGMEM = "";
@@ -416,6 +420,8 @@ protected:
 		static const char EventText_LastUserInputTime[];
 		static const char EventText_FreeMemoryAvailable[];
 		static const char EventText_TaskPoolFull[];
+		static const char EventText_TemperatureState[];
+		static const char EventText_HumidityState[];
 		static const char MessageText_TaskRetryFailure[];
 
 	#else //AVR
