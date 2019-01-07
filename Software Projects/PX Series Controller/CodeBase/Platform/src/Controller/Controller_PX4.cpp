@@ -127,11 +127,16 @@ bool Controller_PX4::Run()
 
 void Controller_PX4::UpdateState()
 {
+	// Refresh controller alarm state
+	if (_rtcLogger->CurrentTime().secondstime() >= (lastAlarmStatusUpdate + MAX_ALARM_STATE_REFRESH_INTERVAL_SEC)) {
+
+		_commandInterpreter->InvokeTaskRequest(TASKALIAS_REFRESH_STATE_SYSTEM_ALARMS);
+		lastAlarmStatusUpdate = _rtcLogger->CurrentTime().secondstime();
+	}
+
 	// General non-scheduled state updates
 	if (_rtcLogger->CurrentTime().secondstime() >= (lastRelayUpdate + MAX_POWER_RELAY_STATE_REFRESH_INTERVAL_SEC))
 	{
-		_commandInterpreter->InvokeTaskRequest(TASKALIAS_REFRESH_STATE_SYSTEM_ALARMS);
-
 		if (dataModel_Viewstate->GetNavigationMap()->ViewstateAssociation() != ViewstateAlias::VIEWSTATEALIAS_MANUAL_OVERRIDE_VIEW)
 		{
 			_commandInterpreter->InvokeTaskRequest(TASKALIAS_REFRESH_STATE_LIGHT);

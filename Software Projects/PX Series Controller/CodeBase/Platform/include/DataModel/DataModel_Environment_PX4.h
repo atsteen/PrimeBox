@@ -16,6 +16,7 @@
 */
 
 #pragma once
+#include "..\..\..\Configurations\PX4_Config.h"
 #include "..\SharedStructure\Subject.h"
 #include "..\SharedStructure\SharedInterface\IModelEnvAirData.h"
 #include "..\SharedStructure\SharedInterface\IModelEnvLightData.h"
@@ -53,8 +54,10 @@ public:
 
 	virtual const int * const GetAlarmThresholdOverTempF() { return &_alarmThreshold_OverTempF; }
 	virtual void SetAlarmThresholdOverTempF(const int * const alarmThresholdOverTemp) override;
+	virtual const bool GetAlarmState(const EnvAirDataAlarmTypes AlarmType) override;
 	virtual const int * const GetAlarmThresholdOverRH() { return &_alarmThreshold_OverRH; }
 	virtual void SetAlarmThresholdOverRH(const int * const alarmThresholdOverRh) override;
+	virtual void SetAlarmState(const EnvAirDataAlarmTypes AlarmType, const bool AlarmValue) override;
 
 	virtual const double GetTemperatureFahrenheit() override;
 	virtual const char * GetTemperatureFahrenheitText() override;
@@ -93,6 +96,8 @@ private:
 	int _alarmThreshold_OverTempF = 85;
 	int _alarmThreshold_OverTempF_MIN = 32;
 	int _alarmThreshold_OverTempF_MAX = 120;
+	int _overTemp_Recovery_Buffer = ALARM_TEMP_RECOVERY_BUFFER;
+	int _overRH_Recovery_Buffer = ALARM_RH_RECOVERY_BUFFER;
 	int _alarmThreshold_OverRH = 70;
 	int _alarmThreshold_OverRH_MIN = 0;
 	int _alarmThreshold_OverRH_MAX = 100;
@@ -100,4 +105,5 @@ private:
 	const int _fanDutyCycle_MIN = 1;
 	TimeSignature _defaultSunriseTime = { 0,0,0,6 };
 	TimeSignature _defaultSunsetTime = { 0,0,0,22 };
+	bool _alarmState[EnvAirDataAlarmTypes::FINAL] = { false };
 };

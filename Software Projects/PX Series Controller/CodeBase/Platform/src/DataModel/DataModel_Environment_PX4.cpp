@@ -115,11 +115,21 @@ void DataModel_Environment_PX4::SetAlarmThresholdOverTempF(const int * const ala
 	//this->notifyObservers();
 }
 
+const bool DataModel_Environment_PX4::GetAlarmState(const EnvAirDataAlarmTypes AlarmType)
+{
+	return _alarmState[AlarmType];
+}
+
 void DataModel_Environment_PX4::SetAlarmThresholdOverRH(const int * const alarmThresholdOverRh)
 {
 	_alarmThreshold_OverRH = *alarmThresholdOverRh;
 	this->UpdatePersistentData(_persistentDataCoordinator);
 	//this->notifyObservers();
+}
+
+void DataModel_Environment_PX4::SetAlarmState(const EnvAirDataAlarmTypes AlarmType, const bool AlarmValue)
+{
+	_alarmState[AlarmType] = AlarmValue;
 }
 
 const double DataModel_Environment_PX4::GetTemperatureFahrenheit()

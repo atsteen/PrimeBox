@@ -51,9 +51,21 @@ private:
 inline bool PX4_StateRefresh_FansCirculation::HandleTask(TaskItem * _taskItem)
 {
 	if (!_CanHandleTask(_taskItem)) { return false; }
-	if (!_environmentData->GetCirculationFanCycleDefaultState()) { return true; }
+
+	bool alarmActive = _environmentData->GetAlarmState(EnvAirDataAlarmTypes::TEMP_OVER_THRESH) || _environmentData->GetAlarmState(EnvAirDataAlarmTypes::HUMIDITY_OVER_THRESH);
+
+	if (alarmActive) {
+		_powerRelayArray->EnableAllTypesInGroup(ComponentTypeAssociation::FAN_CIRCULATION, ComponentGroupAssociation::GROUP_A);
+		return true;
+	}
+	else if (!*_environmentData->GetCirculationFanCycleDefaultState()) {
+		// todo... no restore capability requires GROUP_A to function as alarm event items only, no way to restore non-default state
+		_powerRelayArray->DisableAllTypesInGroup(ComponentTypeAssociation::FAN_CIRCULATION, ComponentGroupAssociation::GROUP_A);
+		return true;
+	}
 
 	TimeSignature const * timeNow = &_rtcLogger->CurrentTime();
+	// todo... convert currentDutyCycleDepthMins to seconds as fractions of minutes are rounded out
 	int currentDutyCycleDepthMins = (timeNow->secondsInDay() / 60) % *_environmentData->GetCirculationFanDutyCycleDuration();
 	int activeDutyCycleDepthMins = 0;
 

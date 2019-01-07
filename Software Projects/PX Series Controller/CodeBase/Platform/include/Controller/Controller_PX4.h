@@ -58,6 +58,7 @@ public:
 protected:	
 	long lastRelayUpdate = 0;
 	long lastStatusLogUpdate = 0;
+	long lastAlarmStatusUpdate = 0;
 
 	void LogControllerStatus();
 	void LogEnvironmentData();

@@ -51,7 +51,16 @@ private:
 inline bool PX4_StateRefresh_FansExhaust::HandleTask(TaskItem * _taskItem)
 {
 	if (!_CanHandleTask(_taskItem)) { return false; }
-	if (!_environmentData->GetExhaustFanCycleDefaultState()) { return true; }
+
+	if (_environmentData->GetAlarmState(EnvAirDataAlarmTypes::TEMP_OVER_THRESH)) {
+		_powerRelayArray->EnableAllTypesInGroup(ComponentTypeAssociation::FAN_EXHAUST, ComponentGroupAssociation::GROUP_A);
+		return true;
+	}
+	else if (!*_environmentData->GetExhaustFanCycleDefaultState()) {
+		// todo... no restore capability requires GROUP_A to function as alarm event items only, no way to restore non-default state
+		_powerRelayArray->DisableAllTypesInGroup(ComponentTypeAssociation::FAN_EXHAUST, ComponentGroupAssociation::GROUP_A); 
+		return true;
+	}
 
 	TimeSignature const * timeNow = &_rtcLogger->CurrentTime();
 	int currentDutyCycleDepthMins = (timeNow->secondsInDay() / 60) % *_environmentData->GetExhaustFanDutyCycleDuration();

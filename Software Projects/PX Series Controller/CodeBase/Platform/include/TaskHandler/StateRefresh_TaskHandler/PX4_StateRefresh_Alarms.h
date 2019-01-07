@@ -47,16 +47,33 @@ inline bool PX4_StateRefresh_Alarms::HandleTask(TaskItem * _taskItem)
 {
 	if (!_CanHandleTask(_taskItem)) { return false; }
 
-	if (_systemData->GetLogAlarmDefaultState())
-	{
-		if (_environmentData->GetTemperatureFahrenheit() >= *_environmentData->GetAlarmThresholdOverTempF())
-		{
-			_rtcLogger->LogEvent(EVENT_TEXT_ALARM_OVERTEMP);
-		}
+	bool logAlarmEvents = _systemData->GetLogAlarmDefaultState();
 
-		if (_environmentData->GetRelativeHumidity() >= *_environmentData->GetAlarmThresholdOverRH())
-		{
-			_rtcLogger->LogEvent(EVENT_TEXT_ALARM_OVERRH);
+	if (_environmentData->GetAlarmState(EnvAirDataAlarmTypes::TEMP_OVER_THRESH)) {
+
+		const int alarmTempThres = *_environmentData->GetAlarmThresholdOverTempF();
+		const double tempera= _environmentData->GetTemperatureFahrenheit();
+
+		if (alarmTempThres - tempera >= ALARM_TEMP_RECOVERY_BUFFER) {
+			_environmentData->SetAlarmState(EnvAirDataAlarmTypes::TEMP_OVER_THRESH, false);
+		}
+	}
+	else {
+		if (*_environmentData->GetAlarmThresholdOverTempF() <= _environmentData->GetTemperatureFahrenheit()) {
+			_environmentData->SetAlarmState(EnvAirDataAlarmTypes::TEMP_OVER_THRESH, true);
+			if (logAlarmEvents) { _rtcLogger->LogEvent(EVENT_TEXT_ALARM_OVERTEMP); }
+		}
+	}
+
+	if (_environmentData->GetAlarmState(EnvAirDataAlarmTypes::HUMIDITY_OVER_THRESH)) {
+		if (*_environmentData->GetAlarmThresholdOverRH() - _environmentData->GetRelativeHumidity() >= ALARM_RH_RECOVERY_BUFFER) {
+			_environmentData->SetAlarmState(EnvAirDataAlarmTypes::HUMIDITY_OVER_THRESH, false);
+		}
+	}
+	else {
+		if (*_environmentData->GetAlarmThresholdOverRH() <= _environmentData->GetRelativeHumidity()) {
+			_environmentData->SetAlarmState(EnvAirDataAlarmTypes::HUMIDITY_OVER_THRESH, true);
+			if (logAlarmEvents) { _rtcLogger->LogEvent(EVENT_TEXT_ALARM_OVERRH); }
 		}
 	}
 

@@ -31,6 +31,7 @@ void EventLog_Item_Collection::LogEvent(const ViewstateStringAlias newLogEventTe
 
 	_eventLogItems[0].eventTextAlias = newLogEventText;
 	_eventLogItems[0]._eventTS = *newLogEventTime;
+	_eventLogItems[0].eventViewstateElement = nullptr;
 }
 
 void EventLog_Item_Collection::LogEvent(IViewstate_Element * newLogViewstateElement, const TimeSignature * newLogEventTime)

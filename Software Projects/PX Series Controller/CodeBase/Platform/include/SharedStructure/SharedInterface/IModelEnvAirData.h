@@ -17,6 +17,12 @@
 
 #pragma once
 
+enum EnvAirDataAlarmTypes {
+	TEMP_OVER_THRESH,
+	HUMIDITY_OVER_THRESH,
+	FINAL
+};
+
 class IModelEnvAirData
 {
 public:
@@ -46,11 +52,13 @@ public:
 	virtual const bool * const GetExhaustFanCycleDefaultState() = 0;
 	virtual void SetExhaustFanCycleDefaultState(const bool * const defaultExhaustFanCycleStateValue) = 0;
 
-	//todo... Transition to dynamic data
 	virtual const int * const GetAlarmThresholdOverTempF() = 0;
 	virtual void SetAlarmThresholdOverTempF(const int * const alarmThresholdOverTemp) = 0;
 	virtual const int * const GetAlarmThresholdOverRH() = 0;
 	virtual void SetAlarmThresholdOverRH(const int * const alarmThresholdOverRh) = 0;
+
+	virtual const bool GetAlarmState(const EnvAirDataAlarmTypes AlarmType) = 0;
+	virtual void SetAlarmState(const EnvAirDataAlarmTypes AlarmType, const bool AlarmValue) = 0;
 };
 
 inline IModelEnvAirData::~IModelEnvAirData() {}

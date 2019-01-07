@@ -46,7 +46,7 @@ private:
 inline bool PX4_StateRefresh_Lights::HandleTask(TaskItem * _taskItem)
 {
 	if (!_CanHandleTask(_taskItem)) { return false; }
-	if (!_lightData->GetLightCycleDefaultState()) { return true; }
+	if (!*_lightData->GetLightCycleDefaultState()) { return true; }  // return if default light mode is disabled (do not process unscheduled light change)
 
 	TimeSignature const * timeNow = &_rtcLogger->CurrentTime();
 
